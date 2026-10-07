@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mmxfq.github.io/firstpass-site/sitemap.xml
