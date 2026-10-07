@@ -30,7 +30,7 @@ Hi {{NAME}} — saw {{PRODUCT}} on {{LAUNCH_SOURCE}}. The product looks useful,
 but the homepage currently {{PERSONALIZED_OBSERVATION}}. I drafted one possible
 headline: "{{MICRO_REWRITE}}"
 
-I can deliver a human-reviewed 10+ point conversion teardown plus the full hero
+I can deliver an evidence-checked 10+ point conversion teardown plus the full hero
 rewrite within 24 hours for $49. Details: {{OFFER_URL}}. No follow-up if it is
 not relevant.
 

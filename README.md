@@ -1,6 +1,6 @@
 # FirstPass
 
-A fixed-scope, human-reviewed homepage conversion teardown for newly launched
+A fixed-scope, evidence-checked homepage conversion teardown for newly launched
 SaaS products.
 
 ## Founding package — US$49
