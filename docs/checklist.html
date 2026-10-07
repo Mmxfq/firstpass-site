@@ -54,6 +54,9 @@
     #result { display: none; margin: 28px 0 0; padding: 25px; border: 1px solid var(--ink); border-radius: 18px; background: var(--card); box-shadow: 7px 7px 0 var(--warm); }
     #score { margin: 5px 0; font: 500 3.5rem/1 Georgia, serif; }
     #next { padding-left: 20px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+    .button.secondary { background: transparent; color: var(--ink); box-shadow: none; }
+    .fine-print { margin: 13px 0 0; color: var(--muted); font-size: .82rem; }
     footer { padding: 35px 0 60px; color: var(--muted); border-top: 1px solid var(--line); }
   </style>
 </head>
@@ -126,7 +129,11 @@
         <p id="summary"></p>
         <strong>Fix these first:</strong>
         <ol id="next"></ol>
-        <a class="button" href="https://github.com/Mmxfq/firstpass-site/issues/new?template=order-request.yml">Request the full $49 teardown</a>
+        <div class="actions">
+          <a class="button" id="primary-action" href="hero-kit.html">Get the $9 rewrite kit</a>
+          <a class="button secondary" id="secondary-action" href="https://github.com/Mmxfq/firstpass-site/issues/new?template=order-request.yml">Request the full $49 teardown</a>
+        </div>
+        <p class="fine-print">Both routes start with a public GitHub intake. No payment is collected until the delivery route is confirmed.</p>
       </section>
     </form>
   </main>
@@ -147,6 +154,19 @@
           ? "The page has a usable foundation, but several gaps still make a first-time visitor interpret the offer."
           : "The page is asking visitors to do too much interpretation. Fix the first-screen promise and next action before adding traffic.";
       const priorities = scored.sort((a, b) => a.value - b.value).slice(0, 3);
+      const primaryAction = document.getElementById("primary-action");
+      const secondaryAction = document.getElementById("secondary-action");
+      if (total <= 10) {
+        primaryAction.textContent = "Request the full $49 teardown";
+        primaryAction.href = "https://github.com/Mmxfq/firstpass-site/issues/new?template=order-request.yml";
+        secondaryAction.textContent = "Or use the $9 rewrite kit";
+        secondaryAction.href = "hero-kit.html";
+      } else {
+        primaryAction.textContent = "Get the $9 rewrite kit";
+        primaryAction.href = "hero-kit.html";
+        secondaryAction.textContent = "Or request the full $49 teardown";
+        secondaryAction.href = "https://github.com/Mmxfq/firstpass-site/issues/new?template=order-request.yml";
+      }
       document.getElementById("score").textContent = total + " / 20";
       document.getElementById("summary").textContent = summary;
       document.getElementById("next").innerHTML = priorities.map((item) => "<li>" + item.title + "</li>").join("");
