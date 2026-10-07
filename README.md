@@ -46,4 +46,4 @@ AI-assisted service.
 - `prospects.csv` — researched prospects and outreach status
 - `outreach.md` — short, personalized outreach templates
 - `site/domestic.html` — paused domestic offer page and listing-image source
-- `site/index.html` — public FirstPass sales page
+- `docs/index.html` — public FirstPass sales page
