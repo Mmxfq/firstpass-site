@@ -1,49 +1,33 @@
-# First Revenue Lab
+# FirstPass
 
-Execution workspace for earning the first legitimate sale with a productized,
-AI-assisted service.
+A fixed-scope, human-reviewed homepage conversion teardown for newly launched
+SaaS products.
 
-## Paused domestic fallback
+## Founding package — US$49
 
-**门店线上门面焕新包**
+- 10+ prioritized findings tied to visible page evidence
+- complete hero rewrite: eyebrow, headline, subheadline, CTA, and trust line
+- seven-day action plan
+- one clarification round
+- delivery within one business day after scope confirmation
 
-- Price: **299 元 / 店**
-- Target buyer: a new restaurant, salon, nail shop, or similar local store with
-  incomplete online listing copy
-- Turnaround: 24–48 hours after receiving complete, verified source material
-- Deliverable: listing audit, rewritten introduction, three package
-  descriptions, five image scripts, twenty review-response templates, and an
-  upload checklist
-- Transaction: use platform escrow; never request the merchant's account login
+No meeting or account access is required. FirstPass reviews public marketing
+pages only. It does not include implementation or guarantee commercial results.
 
-## Primary offer
+[View the complete scope](https://mmxfq.github.io/firstpass-site/) ·
+[Request a teardown](https://github.com/Mmxfq/firstpass-site/issues/new?template=order-request.yml) ·
+[Ask a public question](https://github.com/Mmxfq/firstpass-site/discussions/1)
 
-**FirstPass: 24-Hour SaaS Conversion Teardown**
+## What is in this repository
 
-- Founding-client price: **US$49**
-- Target buyer: a founder who launched a SaaS product in the last 30 days
-- Turnaround: one business day after receiving the public website URL
-- Deliverable: a concise, human-reviewed report with prioritized conversion
-  issues, annotated evidence, a rewritten hero section, and an action plan
-- Guarantee: full refund if the report contains no actionable recommendation
+- `docs/index.html` — public sales page
+- `offer.md` — scope, qualification, and fulfillment workflow
+- `report-template.md` — paid-report structure
+- `outreach.md` — personalized outreach guidelines
 
-## Operating principles
+## Standards
 
-- No fake identity, credentials, testimonials, urgency, or results claims.
-- Contact only public business channels and make every message specific.
-- Do not add recipients to lists or send repeated unsolicited messages.
-- Honor opt-outs immediately.
-- Collect only the minimum data needed to deliver the service.
-- Never promise revenue gains; sell the quality and speed of the analysis.
-
-## Workspace
-
-- `offer.md` — scope, pricing, qualification, and fulfillment workflow
-- `report-template.md` — reusable paid-report structure
-- `domestic-offer.md` — domestic offer scope and acceptance criteria
-- `domestic-delivery-template.md` — reusable domestic delivery document
-- `domestic-listing.md` — marketplace listing and customer-message copy
-- `prospects.csv` — researched prospects and outreach status
-- `outreach.md` — short, personalized outreach templates
-- `site/domestic.html` — paused domestic offer page and listing-image source
-- `docs/index.html` — public FirstPass sales page
+- no fake credentials, testimonials, scarcity, or results claims
+- no passwords, private analytics, or customer data
+- no repeated unsolicited messages
+- no conversion or revenue guarantees
