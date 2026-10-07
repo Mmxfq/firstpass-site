@@ -1,0 +1,47 @@
+name: Request the $9 SaaS Hero Rewrite Kit
+description: Confirm availability and receive payment and delivery instructions. No payment is due yet.
+title: "Hero Kit request: "
+labels:
+  - product-order
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This request is public. Do not include payment details, private analytics, passwords, customer data, or an email address.
+        FirstPass will confirm availability and provide private payment and delivery instructions before any payment is due.
+
+  - type: input
+    id: website
+    attributes:
+      label: Public product website
+      description: Used only to confirm that the kit fits a SaaS or software homepage.
+      placeholder: https://example.com
+    validations:
+      required: true
+
+  - type: dropdown
+    id: goal
+    attributes:
+      label: Primary homepage goal
+      options:
+        - Start a free trial
+        - Create an account
+        - Book a demo
+        - Join a waitlist
+        - Buy or subscribe
+        - Download or install
+        - Other
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Purchase confirmation
+      options:
+        - label: I understand this is a $9 self-guided Markdown workbook, not a custom teardown or implementation service.
+          required: true
+        - label: I understand delivery begins only after availability is confirmed and payment has cleared.
+          required: true
+        - label: I will not redistribute, resell, or publish the workbook itself.
+          required: true
