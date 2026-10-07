@@ -6,6 +6,7 @@ Canonical URL: https://mmxfq.github.io/firstpass-site/
 Verified directory card: https://allagents.app/agent/firstpass-agent
 Free checklist: https://mmxfq.github.io/firstpass-site/checklist.html
 Public methodology and sample: https://github.com/Mmxfq/firstpass-site
+Public mini teardown: https://mmxfq.github.io/firstpass-site/formtake-mini-teardown.html
 Order inquiry: https://github.com/Mmxfq/firstpass-site/issues/new?template=order-request.yml
 
 ## Offer
