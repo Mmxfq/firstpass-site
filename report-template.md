@@ -26,15 +26,24 @@
 ## Prioritized findings
 
 Repeat this section for every finding.
+An `unknown` item cannot support a factual claim or confidence score. It must
+name the missing evidence, a bounded next check, its owner, and a resolution
+rule.
 
 ### {{NUMBER}}. {{FINDING_TITLE}}
 
 - **Priority:** {{HIGH_MEDIUM_LOW}}
+- **Evidence status:** {{OBSERVED_CONTRADICTED_UNKNOWN}}
 - **Where:** {{PAGE_AND_ELEMENT}}
 - **Observed evidence:** {{WHAT_IS_VISIBLE}}
-- **Why it creates friction:** {{USER_IMPACT}}
+- **Missing evidence:** {{REQUIRED_IF_UNKNOWN}}
+- **Decision at risk:** {{WHAT_DEPENDS_ON_THIS}}
+- **Interpretation / hypothesis:** {{USER_IMPACT}}
 - **Recommended change:** {{SPECIFIC_FIX}}
-- **Acceptance check:** {{HOW_TO_VERIFY}}
+- **Next check:** {{BOUNDED_TEST_SOURCE_OR_QUERY}}
+- **Check owner:** {{PUBLIC_REVIEW_BUYER_ANALYTICS_CUSTOMER_RESEARCH_IMPLEMENTATION}}
+- **Resolution rule:** {{WHAT_MOVES_THIS_TO_OBSERVED_CONTRADICTED_OR_STILL_UNKNOWN}}
+- **Implementation acceptance check:** {{HOW_TO_VERIFY_THE_CHANGE}}
 
 ## Recommended homepage hero
 
