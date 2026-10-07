@@ -1,0 +1,48 @@
+name: Request a FirstPass teardown
+description: Confirm fit for the $49 founding package. No payment is due yet.
+title: "FirstPass request: "
+labels:
+  - order-request
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for your interest. Share only public business information here.
+        Do not include passwords, private analytics, customer data, or payment details.
+
+  - type: input
+    id: website
+    attributes:
+      label: Public website URL
+      description: The SaaS marketing website you want reviewed.
+      placeholder: https://example.com
+    validations:
+      required: true
+
+  - type: input
+    id: audience
+    attributes:
+      label: Primary buyer
+      description: Who should understand and buy the product?
+      placeholder: Operations managers at 10–50 person agencies
+    validations:
+      required: true
+
+  - type: input
+    id: action
+    attributes:
+      label: Main visitor action
+      description: What should a qualified visitor do next?
+      placeholder: Start a trial, book a demo, or join the waitlist
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Scope confirmation
+      options:
+        - label: I understand this is a $49 copy and conversion teardown of one public SaaS website, not implementation or a guarantee of business results.
+          required: true
+        - label: I understand the one-business-day delivery clock starts after payment and scope confirmation.
+          required: true
