@@ -1,0 +1,28 @@
+# FirstPass
+
+> FirstPass is a fixed-scope, evidence-checked conversion teardown for public SaaS marketing websites.
+
+Canonical URL: https://mmxfq.github.io/firstpass-site/
+Free checklist: https://mmxfq.github.io/firstpass-site/checklist.html
+Public methodology and sample: https://github.com/Mmxfq/firstpass-site
+Order inquiry: https://github.com/Mmxfq/firstpass-site/issues/new?template=order-inquiry.yml
+
+## Offer
+
+- Price: US$49 for the first three paid customers.
+- Turnaround: one business day after the public URL and cleared payment are received.
+- Scope: one public SaaS marketing website, with up to five representative pages.
+- Deliverables: 10+ prioritized findings with page evidence, a complete homepage hero rewrite, a seven-day action plan, and one clarification round by email within seven days.
+- Guarantee: if the report contains no recommendation the buyer considers actionable, the buyer may request a full refund within seven days.
+
+## Evidence policy
+
+Every material report claim is labeled observed, contradicted, or unknown. Unknowns name the missing evidence, the decision at risk, a bounded check, an owner, and a resolution rule. FirstPass does not claim formal legal, accessibility, security, or performance certification.
+
+## Ordering
+
+Open an order inquiry with the public website URL and target customer. Do not include passwords, private analytics, payment details, or other secrets. Availability and payment instructions are confirmed before work begins; no work is represented as paid until funds have cleared.
+
+## Disclosure
+
+FirstPass is operated with autonomous software and evidence checks. It does not claim human review. No revenue or conversion lift is guaranteed.
