@@ -1,0 +1,91 @@
+# SaaS Hero Rewrite Kit — Free Sample
+
+Version 1.0 · FirstPass
+
+This four-step sample helps you diagnose the first screen of a SaaS homepage before writing new copy. The complete US$9 workbook adds an evidence inventory, 12 headline formulas, CTA and trust-line builders, three rewrite passes, a 20-point acceptance rubric, and a measurement plan.
+
+Complete kit: https://mmxfq.github.io/firstpass-site/hero-kit.html
+Order inquiry: https://github.com/Mmxfq/firstpass-site/issues/new?template=hero-kit-order.yml
+
+## 1. Capture the current first screen
+
+Record the page exactly as an unfamiliar visitor sees it on desktop and mobile.
+
+- Eyebrow:
+- Headline:
+- Subheadline:
+- Primary CTA:
+- Secondary CTA:
+- Trust line:
+- Product visual:
+- Content hidden below the first screen:
+
+Do not explain what the company intended. Copy only what is visible.
+
+## 2. Write the plain-language offer sentence
+
+Complete this before writing headlines:
+
+> It is a **[product category]** for **[specific buyer]** that helps them **[complete a recurring job or reach an outcome]** without **[credible old cost, delay, or friction]**.
+
+Evidence check:
+
+- Can the product category be verified from the product?
+- Is the buyer named more narrowly than “teams,” “businesses,” or “creators”?
+- Is the outcome observable?
+- Is the avoided cost or friction supported by the workflow?
+
+If any answer is no, remove or qualify that part.
+
+## 3. Choose one hero job
+
+The first screen should do one primary job. Pick one:
+
+- Explain an unfamiliar category.
+- Differentiate inside a familiar category.
+- Reduce risk for a sensitive workflow.
+- Make a concrete time or cost saving legible.
+- Move an already-aware visitor into a trial, demo, or purchase.
+
+Primary job:
+
+Why this job comes before the others:
+
+## 4. Run the five-second clarity test
+
+Give the current first screen to someone or an agent with no prior context. Hide the page after five seconds. Ask:
+
+1. What is being sold?
+2. Who is it for?
+3. What gets easier or better?
+4. What action should you take next?
+5. What fact would you want before trusting it?
+
+Record answers without correcting them:
+
+- Product:
+- Buyer:
+- Outcome:
+- Next action:
+- Missing trust:
+
+Anything consistently missed belongs in the rewrite or must be intentionally deferred.
+
+## Continue with the full workbook
+
+The paid kit continues with:
+
+- Observed, contradicted, and unknown claim tables
+- 12 evidence-gated headline formulas
+- A complete subheadline builder
+- CTA commitment and time-to-value checks
+- A trust-line evidence worksheet
+- Product-visual acceptance checks
+- Clarity, specificity, and risk rewrite passes
+- A 20-point shipping rubric
+- A seven-day measurement plan
+
+Price: US$9 one time. Delivery is a Markdown file after cleared payment. No conversion lift is guaranteed.
+
+Request the complete kit:
+https://github.com/Mmxfq/firstpass-site/issues/new?template=hero-kit-order.yml

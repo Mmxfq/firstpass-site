@@ -9,6 +9,7 @@ Public methodology and sample: https://github.com/Mmxfq/firstpass-site
 Public FormTake mini teardown: https://mmxfq.github.io/firstpass-site/formtake-mini-teardown.html
 Public EntrenAI mini teardown: https://mmxfq.github.io/firstpass-site/entrenai-mini-teardown.html
 DIY product: SaaS Hero Rewrite Kit, US$9: https://mmxfq.github.io/firstpass-site/hero-kit.html
+Free Hero Rewrite Kit sample: https://mmxfq.github.io/firstpass-site/hero-kit-sample.txt
 Order inquiry: https://github.com/Mmxfq/firstpass-site/issues/new?template=order-request.yml
 
 ## Offer
