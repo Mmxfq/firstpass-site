@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A public FirstPass mini teardown of EntrenAI's homepage and onboarding promise, with observed evidence, prioritized changes, and replacement hero copy.">
+  <link rel="canonical" href="https://mmxfq.github.io/firstpass-site/entrenai-mini-teardown.html">
+  <title>EntrenAI Public Mini Teardown — FirstPass</title>
+  <style>
+    :root {
+      --ink: #17211b;
+      --muted: #58645d;
+      --paper: #f5f1e8;
+      --card: #fffdf8;
+      --line: #d8d2c5;
+      --accent: #1e6848;
+      --warm: #e8bb62;
+      --high: #9b2c2c;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: radial-gradient(circle at 88% 4%, rgba(232,187,98,.22), transparent 28rem), var(--paper);
+      font: 17px/1.62 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: var(--accent); }
+    .wrap { width: min(900px, calc(100% - 36px)); margin: auto; }
+    nav { display: flex; justify-content: space-between; gap: 20px; padding: 24px 0; font-weight: 800; }
+    nav a { color: inherit; text-decoration: none; }
+    header { padding: 58px 0 70px; }
+    .eyebrow { color: var(--accent); font-size: .78rem; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
+    h1, h2 { font-family: Georgia, "Times New Roman", serif; font-weight: 500; letter-spacing: -.04em; }
+    h1 { max-width: 820px; margin: 12px 0 22px; font-size: clamp(2.9rem, 7vw, 5.7rem); line-height: .98; }
+    h2 { margin: 0 0 16px; font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.08; }
+    h3 { margin: 0 0 10px; font-size: 1.15rem; }
+    .lead, .meta { color: var(--muted); }
+    .notice, .finding, .rewrite {
+      margin: 24px 0;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--card);
+    }
+    .notice { border-left: 5px solid var(--warm); }
+    .finding.high { border-left: 5px solid var(--high); }
+    .finding.medium { border-left: 5px solid var(--warm); }
+    .label { font-size: .78rem; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+    .high .label { color: var(--high); }
+    section { padding: 62px 0; border-top: 1px solid var(--line); }
+    blockquote { margin: 16px 0; padding-left: 18px; border-left: 3px solid var(--line); color: var(--muted); }
+    .rewrite { border-color: var(--ink); box-shadow: 7px 7px 0 var(--warm); }
+    .rewrite strong { display: block; margin-top: 16px; }
+    .button {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 13px 20px;
+      border: 1px solid var(--ink);
+      border-radius: 999px;
+      background: var(--accent);
+      color: white;
+      font-weight: 850;
+      text-decoration: none;
+      box-shadow: 4px 4px 0 var(--ink);
+    }
+    footer { padding: 42px 0 68px; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <nav class="wrap"><a href="./">FirstPass</a><span>Public mini teardown</span></nav>
+
+  <header class="wrap">
+    <div class="eyebrow">Observed October 8, 2026</div>
+    <h1>EntrenAI's strongest promise survives a missed workout. Its broadest promise may not survive onboarding.</h1>
+    <p class="lead">This public mini teardown responds to EntrenAI's founder explicitly asking where onboarding feels long or confusing. It uses only public pages and the founder's public clarification.</p>
+    <div class="notice">
+      <strong>Scope and independence</strong>
+      <p>This is an unsolicited, unpaid sample—not an endorsement, coaching assessment, product certification, or claim about measured conversion impact. EntrenAI did not commission or approve it before publication. The signed-in product onboarding was not tested.</p>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="wrap">
+        <div class="eyebrow">What already works</div>
+        <h2>The missed-session promise is concrete, differentiated, and easy to test.</h2>
+        <p><strong>Observed:</strong> The homepage says that when a user misses a session, EntrenAI “spreads what matters across the days left” instead of breaking the plan or forcing a restart. The founder's public post makes the same promise: it re-plans the rest of the week instead of piling the session onto tomorrow.</p>
+        <p><strong>Why keep it:</strong> This describes a recognizable failure in fixed plans and a specific recovery behavior. It is stronger than a generic “AI personal trainer” claim because a prospective user can picture exactly when it helps.</p>
+        <p><strong>Trust signal worth preserving:</strong> The homepage attributes testimonials to the App Store or Google Play, dates them, says they were translated from Spanish, and marks edited passages. That disclosure makes the proof easier to assess.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="eyebrow">Prioritized findings</div>
+        <h2>Three changes before sending more people into onboarding.</h2>
+
+        <article class="finding high">
+          <div class="label">High priority · Contradicted expectation</div>
+          <h3>“One plan for everything you train” implies broader coordination than the current plan picker provides.</h3>
+          <p><strong>Homepage evidence:</strong> The hero promises “One plan for everything you train” and “12 sports in one truly periodized plan.” A comparison section says strength and cardio are coordinated in the same week.</p>
+          <p><strong>Founder clarification:</strong> Users pick one of 12 plan types. Coordination happens inside that choice; Hybrid combines strength and running, while Triathlon combines swim, bike, and run. Users may log other training, but it is not part of the selected plan's coordination.</p>
+          <p><strong>Risk:</strong> A cyclist who also lifts may expect arbitrary multi-sport coordination, choose Cycling, and only discover after setup that the promise applies to predefined combined plans.</p>
+          <p><strong>Change:</strong> State the selection rule before signup and repeat it above the plan picker: “Choose one plan. Hybrid and Triathlon coordinate multiple disciplines; other training can still be logged separately.”</p>
+          <p><strong>Acceptance check:</strong> Five first-time visitors can explain which sessions will be coordinated for Cycling, Hybrid, and Triathlon before creating an account.</p>
+        </article>
+
+        <article class="finding medium">
+          <div class="label">Medium priority · Observed</div>
+          <h3>The “12 sports” label mixes sports, goals, and exam preparation into one mental model.</h3>
+          <p><strong>Observed:</strong> The listed plans include sports such as running and cycling, strength goals such as hypertrophy and powerlifting, combined formats such as Hybrid and HYROX, “speed and power,” and entrance-test preparation.</p>
+          <p><strong>Onboarding risk:</strong> A new user has to decode the product's taxonomy before choosing a plan. Someone training for football speed or a police entrance test may not recognize their goal as one of “12 sports.”</p>
+          <p><strong>Change:</strong> Ask “What are you preparing for?” first, then group choices under Single sport, Combined disciplines, Strength goal, Team-sport speed, and Entrance exam. Show which sessions each choice coordinates.</p>
+          <p><strong>Acceptance check:</strong> Users with three representative goals—running plus lifting, football speed, and a police test—choose the intended plan without using a back button or regenerating immediately.</p>
+        </article>
+
+        <article class="finding medium">
+          <div class="label">Medium priority · Unknown</div>
+          <h3>The public page cannot show whether onboarding explains why an adjustment happened.</h3>
+          <p><strong>Observed:</strong> The homepage says the plan adjusts every morning to sleep and fatigue. In the public thread, the founder says one bad night only softens intensity, several days of signals are needed before volume is trimmed, and the app shows what changed and why.</p>
+          <p><strong>Missing evidence:</strong> The public page does not show an example adjustment screen or the exact explanation a new user sees. The signed-in onboarding and daily check-in were outside this review's scope.</p>
+          <p><strong>Bounded check:</strong> Add one annotated screenshot showing “signal → exact change → unchanged parts of the week.” Then test whether first-time users describe the plan as stable rather than continuously rewritten.</p>
+          <p><strong>Resolution rule:</strong> Keep the daily-adjustment claim if the UI names the signal, the bounded change, and what remains fixed. Rewrite it if users interpret every check-in as a new plan.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="eyebrow">Replacement copy</div>
+        <h2>Lead with the recoverable week, then define the plan boundary.</h2>
+        <div class="rewrite">
+          <strong>Eyebrow</strong>
+          A training week that adapts without starting over
+          <strong>Headline</strong>
+          Miss a workout. Keep the plan.
+          <strong>Subheadline</strong>
+          Choose from 12 periodized plans—including combined Hybrid and Triathlon options. EntrenAI coordinates the sessions inside your chosen plan, adjusts intensity for sleep and fatigue, and reshuffles what matters when life gets in the way.
+          <strong>Primary CTA</strong>
+          Choose my plan
+          <strong>Secondary CTA</strong>
+          See a missed-session re-plan
+          <strong>Trust line</strong>
+          Free workout logging stays free · 7-day personalized-plan trial · iOS, Android, and web
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="eyebrow">Evidence links</div>
+        <h2>Recheck the source before shipping.</h2>
+        <ul>
+          <li><a href="https://www.entrenai.app/">EntrenAI homepage</a></li>
+          <li><a href="https://www.indiehackers.com/post/i-built-one-training-plan-that-coordinates-strength-running-cycling-and-9-other-sports-feedback-welcome-421d532726">Founder's public request and clarification</a></li>
+          <li><a href="https://www.entrenai.app/en/support">EntrenAI support page</a></li>
+        </ul>
+        <p class="meta">Public pages can change. These observations describe the pages retrieved on October 8, 2026.</p>
+        <a class="button" href="https://github.com/Mmxfq/firstpass-site/issues/new?template=order-request.yml">Request a private full teardown for $49</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">FirstPass · Evidence-checked SaaS conversion teardown · No measured conversion lift is claimed.</footer>
+</body>
+</html>

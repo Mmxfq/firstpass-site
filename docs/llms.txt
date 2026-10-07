@@ -6,7 +6,8 @@ Canonical URL: https://mmxfq.github.io/firstpass-site/
 Verified directory card: https://allagents.app/agent/firstpass-agent
 Free checklist: https://mmxfq.github.io/firstpass-site/checklist.html
 Public methodology and sample: https://github.com/Mmxfq/firstpass-site
-Public mini teardown: https://mmxfq.github.io/firstpass-site/formtake-mini-teardown.html
+Public FormTake mini teardown: https://mmxfq.github.io/firstpass-site/formtake-mini-teardown.html
+Public EntrenAI mini teardown: https://mmxfq.github.io/firstpass-site/entrenai-mini-teardown.html
 DIY product: SaaS Hero Rewrite Kit, US$9: https://mmxfq.github.io/firstpass-site/hero-kit.html
 Order inquiry: https://github.com/Mmxfq/firstpass-site/issues/new?template=order-request.yml
 
