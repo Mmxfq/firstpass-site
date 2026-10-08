@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A public FirstPass mini teardown of Tolerable Workplace's certification proof, demo labeling, and public signup path.">
+  <link rel="canonical" href="https://mmxfq.github.io/firstpass-site/tolerable-workplace-mini-teardown.html">
+  <title>Tolerable Workplace Public Mini Teardown — FirstPass</title>
+  <style>
+    :root {
+      --ink: #17211b;
+      --muted: #58645d;
+      --paper: #f5f1e8;
+      --card: #fffdf8;
+      --line: #d8d2c5;
+      --accent: #1e6848;
+      --warm: #e8bb62;
+      --high: #9b2c2c;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: radial-gradient(circle at 88% 4%, rgba(232,187,98,.22), transparent 28rem), var(--paper);
+      font: 17px/1.62 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: var(--accent); }
+    .wrap { width: min(900px, calc(100% - 36px)); margin: auto; }
+    nav { display: flex; justify-content: space-between; gap: 20px; padding: 24px 0; font-weight: 800; }
+    nav a { color: inherit; text-decoration: none; }
+    header { padding: 58px 0 70px; }
+    .eyebrow { color: var(--accent); font-size: .78rem; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
+    h1, h2 { font-family: Georgia, "Times New Roman", serif; font-weight: 500; letter-spacing: -.04em; }
+    h1 { max-width: 820px; margin: 12px 0 22px; font-size: clamp(2.9rem, 7vw, 5.7rem); line-height: .98; }
+    h2 { margin: 0 0 16px; font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.08; }
+    h3 { margin: 0 0 10px; font-size: 1.15rem; }
+    .lead, .meta { color: var(--muted); }
+    .notice, .finding, .rewrite {
+      margin: 24px 0;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--card);
+    }
+    .notice { border-left: 5px solid var(--warm); }
+    .finding.high { border-left: 5px solid var(--high); }
+    .finding.medium { border-left: 5px solid var(--warm); }
+    .label { font-size: .78rem; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+    .high .label { color: var(--high); }
+    section { padding: 62px 0; border-top: 1px solid var(--line); }
+    code { padding: .12em .35em; border-radius: 4px; background: #ece7dc; font-size: .9em; }
+    .rewrite { border-color: var(--ink); box-shadow: 7px 7px 0 var(--warm); }
+    .rewrite strong { display: block; margin-top: 16px; }
+    .button {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 13px 20px;
+      border: 1px solid var(--ink);
+      border-radius: 999px;
+      background: var(--accent);
+      color: white;
+      font-weight: 850;
+      text-decoration: none;
+      box-shadow: 4px 4px 0 var(--ink);
+    }
+    footer { padding: 42px 0 68px; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <nav class="wrap"><a href="./">FirstPass</a><span>Public mini teardown</span></nav>
+
+  <header class="wrap">
+    <div class="eyebrow">Observed October 8, 2026</div>
+    <h1>The joke lands. The proof boundary needs one serious label.</h1>
+    <p class="lead">This public mini teardown follows Tolerable Workplace from its homepage through the certified-company list, live demo, and account-creation page on desktop and a 390-pixel mobile viewport.</p>
+    <div class="notice">
+      <strong>Scope and independence</strong>
+      <p>This is an unsolicited, unpaid sample—not an endorsement, legal review, privacy audit, accessibility certification, or claim about measured conversion impact. Tolerable Workplace did not commission or approve it before publication.</p>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="wrap">
+        <div class="eyebrow">What already works</div>
+        <h2>The product explains an unfamiliar category without losing its voice.</h2>
+        <p><strong>Observed:</strong> The first screen names the mechanism, the 65% certification threshold, the free price, and the primary action. The methodology, pricing, public list, demo, signup, and contact routes are all reachable without an account.</p>
+        <p><strong>Responsive check:</strong> The public contact form fit a 390-pixel viewport without horizontal overflow. Its fields retained programmatic names, and the form disclosed that messages are emailed rather than stored in the survey database.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="eyebrow">Prioritized findings</div>
+        <h2>Two trust fixes before asking HR teams to share employee data.</h2>
+
+        <article class="finding high">
+          <div class="label">High priority · Reproduced</div>
+          <h3>Demo organizations are presented as currently certified workplaces.</h3>
+          <p><strong>Observed:</strong> <code>/certified</code> says it contains “Every currently certified company that chose to be listed.” Its detail pages describe closed anonymous surveys and state that “The survey is real.” The explicit demo dashboard, however, identifies itself with “Leave demo” and “Sign out of Synergex Dynamics,” while Synergex Dynamics also appears in the public certified list without a sample or demo label.</p>
+          <p><strong>Why it matters:</strong> A first-time HR buyer cannot tell where demonstration data ends and customer proof begins. That ambiguity is especially costly for a product whose value rests on independent certification.</p>
+          <p><strong>Change:</strong> Mark every seeded organization and score as “Demo company · sample data,” or split sample records from verified live certifications.</p>
+          <p><strong>Acceptance check:</strong> A visitor opening the homepage carousel, list, any sample detail, or demo dashboard sees the same sample-data status before interpreting a score as customer evidence.</p>
+        </article>
+
+        <article class="finding high">
+          <div class="label">High priority · Observed</div>
+          <h3>The signup commitment point does not expose Privacy or Terms.</h3>
+          <p><strong>Observed:</strong> <code>/signup</code> collects a name, company, headcount, work email, and password. The page offers no Privacy or Terms link beside “Create account,” and neither policy appears in the public footer or sitemap retrieved during the check.</p>
+          <p><strong>Why it matters:</strong> The homepage makes specific promises about anonymous workforce responses and IP-address handling. A buyer evaluating those promises cannot inspect the account-data terms at the point where personal data is first requested.</p>
+          <p><strong>Change:</strong> Link Privacy and Terms beside the account action and in the global footer. State the controller/contact, account and survey-data retention, subprocessors, user rights, and the boundary between employer account data and anonymous responses.</p>
+          <p><strong>Acceptance check:</strong> A signed-out visitor can reach both policies from the signup page without submitting data, and each policy has an owner, effective date, retention rules, and contact route.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="eyebrow">Trust-line rewrite</div>
+        <h2>Keep the tone, remove the evidence ambiguity.</h2>
+        <div class="rewrite">
+          <strong>Homepage list heading</strong>
+          See how certification looks
+          <strong>Sample-data label</strong>
+          Demo workplaces · Illustrative survey results
+          <strong>Supporting line</strong>
+          Explore the public scorecard before running your own anonymous survey. Live certified workplaces will appear separately after they choose to be listed.
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="eyebrow">Evidence links</div>
+        <h2>Recheck the source before shipping.</h2>
+        <ul>
+          <li><a href="https://tolerableworkplace.com/">Tolerable Workplace homepage</a></li>
+          <li><a href="https://tolerableworkplace.com/certified">Public certified-workplace list</a></li>
+          <li><a href="https://tolerableworkplace.com/certified/synergex-dynamics">Synergex Dynamics detail</a></li>
+          <li><a href="https://tolerableworkplace.com/app">Live demo dashboard</a></li>
+          <li><a href="https://tolerableworkplace.com/signup">Account creation</a></li>
+          <li><a href="https://news.ycombinator.com/item?id=50001425">Public Show HN launch</a></li>
+        </ul>
+        <p class="meta">Public pages can change. These observations describe pages retrieved on October 8, 2026. The signup path was inspected without creating an account or submitting personal data.</p>
+        <a class="button" href="https://github.com/Mmxfq/firstpass-site/issues/new?template=order-request.yml">Request a private full teardown for $49</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">FirstPass · Evidence-checked SaaS conversion teardown · No measured conversion lift is claimed.</footer>
+</body>
+</html>
