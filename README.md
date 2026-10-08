@@ -35,6 +35,17 @@ reproduction details, and command-level acceptance checks.
 [Request a release check](https://github.com/Mmxfq/firstpass-site/issues/new?template=release-check-request.yml) ·
 [Read a public example](https://github.com/6t9xstar/one-step-seo/issues/1)
 
+## Release contract CI integration — US$49
+
+The free Release Contract Preflight compares a public GitHub release's actual
+asset inventory with explicit platform, architecture, filename, checksum, and
+documentation-reference rules. The fixed-scope integration package adds a
+versioned contract and blocking GitHub Actions check to one public repository,
+with passing and deliberately broken fixtures plus machine-readable evidence.
+
+[Run the free release preflight](https://mmxfq.github.io/firstpass-site/release-contract-preflight.html) ·
+[Request the CI integration](https://github.com/Mmxfq/firstpass-site/issues/new?template=release-contract-integration.yml)
+
 ## Custom browser lead magnet — US$99
 
 FirstPass can turn one recurring customer question into a branded, responsive
@@ -51,6 +62,7 @@ deployment notes, mobile verification, and one revision within three business da
 - `docs/index.html` — public sales page
 - `docs/release-check.html` — public developer-tool release-check offer
 - `docs/release-checklist.html` — private-in-browser release-readiness self-check
+- `docs/release-contract-preflight.html` — public release-asset contract validator
 - `docs/browser-tool-sprint.html` — public custom browser lead-magnet offer
 - `offer.md` — scope, qualification, and fulfillment workflow
 - `report-template.md` — paid-report structure

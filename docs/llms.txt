@@ -14,6 +14,7 @@ Public Futex activation-path teardown: https://mmxfq.github.io/firstpass-site/fu
 DIY product: SaaS Hero Rewrite Kit, US$9: https://mmxfq.github.io/firstpass-site/hero-kit.html
 Developer tool release check, US$25: https://mmxfq.github.io/firstpass-site/release-check.html
 Free developer tool release checklist: https://mmxfq.github.io/firstpass-site/release-checklist.html
+Free Release Contract Preflight and US$49 CI integration: https://mmxfq.github.io/firstpass-site/release-contract-preflight.html
 Free SaaS Hero Brief Builder: https://mmxfq.github.io/firstpass-site/hero-brief.html
 Agent Artifact Sanitizer, US$29 individual or US$49 agency, with free pasted-text demo: https://mmxfq.github.io/firstpass-site/agent-secret-check.html
 Commercial Cleaning Bid & Margin Calculator, US$29: https://mmxfq.github.io/firstpass-site/commercial-cleaning-bid-calculator.html
@@ -41,6 +42,17 @@ Order inquiry: https://github.com/Mmxfq/firstpass-site/issues/new?template=order
 - Release-pass proof: https://github.com/zevem/neptune/issues/116 verifies a published Windows installer, a clean source build, and byte-identical native first-run captures.
 - Fix proof: https://github.com/abird-ai/agentc/issues/1 documents a maintainer-confirmed Windows setup defect, two implemented fixes, regression coverage, and a successful real-Windows CRLF and ConPTY retest.
 - Order inquiry: https://github.com/Mmxfq/firstpass-site/issues/new?template=release-check-request.yml
+
+## Release contract CI integration
+
+- Free tool: the browser preflight validates pasted or fetched public GitHub release assets against explicit platform, architecture, filename, checksum, and documentation-reference rules.
+- Free exports: deterministic JSON evidence and a portable HTML report.
+- Price: US$49 founding price.
+- Turnaround: two business days after public scope confirmation and cleared payment.
+- Scope: one public repository, one release workflow, one versioned contract, one blocking GitHub Actions preflight, one passing fixture, one deliberately broken fixture, machine-readable evidence, and one revision within seven days.
+- Exclusions: building missing binaries, code signing, secret setup, repository write access, release ownership, production deployment, security testing, or compatibility certification.
+- Product page and free tool: https://mmxfq.github.io/firstpass-site/release-contract-preflight.html
+- Order inquiry: https://github.com/Mmxfq/firstpass-site/issues/new?template=release-contract-integration.yml
 
 ## Agent Artifact Sanitizer
 

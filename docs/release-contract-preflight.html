@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Check GitHub release assets against an explicit cross-platform contract before announcing a release. Free browser tool with JSON and HTML evidence exports.">
+  <link rel="canonical" href="https://mmxfq.github.io/firstpass-site/release-contract-preflight.html">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Release Contract Preflight — Free Release Asset Validator">
+  <meta property="og:description" content="Catch missing platform builds, filename drift, empty assets, duplicate names, broken references, and checksum gaps before users do.">
+  <meta property="og:url" content="https://mmxfq.github.io/firstpass-site/release-contract-preflight.html">
+  <title>Release Contract Preflight — FirstPass</title>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "FirstPass Release Contract Preflight",
+      "description": "A browser-based validator for cross-platform release asset contracts.",
+      "url": "https://mmxfq.github.io/firstpass-site/release-contract-preflight.html",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Any",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+  </script>
+  <style>
+    :root {
+      --ink: #17211b;
+      --muted: #59645d;
+      --paper: #f5f1e8;
+      --card: #fffdf8;
+      --line: #d7d0c3;
+      --accent: #1e6848;
+      --accent-dark: #124832;
+      --warm: #e8bb62;
+      --danger: #8f3028;
+      --danger-bg: #fae9e6;
+      --warn: #7a5310;
+      --warn-bg: #fff3d8;
+      --safe: #1e6848;
+      --safe-bg: #e8f3eb;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 90% 2%, rgba(232,187,98,.25), transparent 29rem),
+        var(--paper);
+      font: 17px/1.56 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; }
+    button, input, textarea { font: inherit; }
+    .wrap { width: min(1180px, calc(100% - 36px)); margin: auto; }
+    nav { display: flex; justify-content: space-between; gap: 20px; padding: 24px 0; font-weight: 850; }
+    nav a { text-decoration: none; }
+    header { max-width: 920px; padding: 56px 0 42px; }
+    .eyebrow { color: var(--accent); font-size: .78rem; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
+    h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; font-weight: 500; letter-spacing: -.04em; }
+    h1 { margin: 12px 0 20px; font-size: clamp(3rem, 7vw, 5.8rem); line-height: .98; }
+    h2 { margin: 0 0 12px; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.08; }
+    h3 { margin: 0; font-size: 1.4rem; }
+    .lead { max-width: 800px; color: var(--muted); font-size: 1.15rem; }
+    .privacy {
+      display: inline-flex;
+      margin-top: 12px;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--card);
+      font-size: .88rem;
+      font-weight: 800;
+    }
+    main { padding-bottom: 76px; }
+    .tool { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(350px, .92fr); gap: 22px; align-items: start; }
+    .panel {
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--card);
+    }
+    .results { position: sticky; top: 18px; border-color: var(--ink); box-shadow: 8px 8px 0 var(--warm); }
+    label { display: block; margin: 18px 0 7px; font-weight: 850; }
+    label:first-of-type { margin-top: 0; }
+    input[type="url"], textarea {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #aaa59c;
+      border-radius: 10px;
+      background: #fff;
+      color: var(--ink);
+    }
+    textarea {
+      min-height: 230px;
+      resize: vertical;
+      font: 13px/1.48 ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+      tab-size: 2;
+    }
+    #assets { min-height: 180px; }
+    #checksums { min-height: 100px; }
+    input:focus, textarea:focus, button:focus-visible, a:focus-visible {
+      outline: 3px solid rgba(30,104,72,.28);
+      outline-offset: 2px;
+    }
+    .hint, .fine { color: var(--muted); }
+    .hint { margin: 0 0 10px; font-size: .88rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: 11px; align-items: center; margin-top: 16px; }
+    button, .button {
+      display: inline-block;
+      padding: 12px 18px;
+      border: 1px solid var(--ink);
+      border-radius: 999px;
+      background: var(--accent);
+      color: white;
+      font-weight: 850;
+      text-decoration: none;
+      box-shadow: 3px 3px 0 var(--ink);
+      cursor: pointer;
+    }
+    button:hover, .button:hover { background: var(--accent-dark); }
+    button.secondary, .button.secondary { background: var(--card); color: var(--ink); box-shadow: none; }
+    button:disabled { cursor: wait; opacity: .65; }
+    .status { min-height: 1.5em; margin: 10px 0 0; color: var(--accent); font-size: .9rem; font-weight: 800; }
+    .summary { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; margin: 20px 0; }
+    .metric { padding: 13px; border: 1px solid var(--line); border-radius: 12px; background: #f9f6ee; }
+    .metric strong { display: block; font: 500 2rem/1 Georgia, serif; }
+    .metric span { color: var(--muted); font-size: .78rem; font-weight: 760; }
+    .verdict { padding: 15px; border-left: 5px solid var(--safe); border-radius: 9px; background: var(--safe-bg); }
+    .verdict.fail { border-color: var(--danger); background: var(--danger-bg); }
+    .verdict.warn { border-color: var(--warn); background: var(--warn-bg); }
+    #findings { margin: 18px 0; padding: 0; list-style: none; }
+    .finding { margin-bottom: 9px; padding: 13px 14px; border: 1px solid var(--line); border-radius: 11px; background: #fff; }
+    .finding-head { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+    .badge { flex: 0 0 auto; padding: 3px 8px; border-radius: 999px; font-size: .68rem; font-weight: 900; text-transform: uppercase; }
+    .badge.error { color: var(--danger); background: var(--danger-bg); }
+    .badge.warning { color: var(--warn); background: var(--warn-bg); }
+    .badge.pass { color: var(--safe); background: var(--safe-bg); }
+    .finding p { margin: 5px 0 0; color: var(--muted); font-size: .88rem; overflow-wrap: anywhere; }
+    .empty { padding: 30px 0; color: var(--muted); }
+    .integration {
+      margin-top: 72px;
+      padding: 34px;
+      border: 1px solid var(--ink);
+      border-radius: 20px;
+      background: var(--card);
+      box-shadow: 8px 8px 0 var(--warm);
+    }
+    .integration-grid { display: grid; grid-template-columns: 1.25fr .75fr; gap: 28px; align-items: start; }
+    .integration ul { padding-left: 20px; }
+    .price { margin: 6px 0; font: 500 3.2rem/1 Georgia, serif; }
+    .how { margin-top: 72px; padding-top: 62px; border-top: 1px solid var(--line); }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 28px; }
+    .step { padding: 20px; border: 1px solid var(--line); border-radius: 14px; background: rgba(255,253,248,.75); }
+    .step strong { display: block; margin-bottom: 7px; }
+    footer { padding: 36px 0 68px; color: var(--muted); border-top: 1px solid var(--line); }
+    @media (max-width: 860px) {
+      .tool, .integration-grid { grid-template-columns: 1fr; }
+      .results { position: static; }
+      header { padding-top: 38px; }
+    }
+    @media (max-width: 520px) {
+      .summary, .steps { grid-template-columns: 1fr; }
+      .panel, .integration { padding: 20px; }
+      nav span { display: none; }
+      h1 { overflow-wrap: anywhere; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="wrap"><a href="./">FirstPass</a><span>Release evidence before announcement</span></nav>
+
+  <header class="wrap">
+    <div class="eyebrow">Platform coverage · filenames · checksums · references</div>
+    <h1>Make the release prove its contract.</h1>
+    <p class="lead">Define the files users should receive, paste a GitHub asset response or fetch one public release, and catch missing platforms, naming drift, empty uploads, duplicate names, broken references, and checksum gaps before the announcement.</p>
+    <span class="privacy">Local by default: pasted data never leaves this page</span>
+  </header>
+
+  <main class="wrap">
+    <div class="tool">
+      <section class="panel" aria-labelledby="input-title">
+        <h2 id="input-title">Preflight input</h2>
+
+        <label for="release-url">Optional public GitHub release URL</label>
+        <p class="hint">Fetching contacts only GitHub's public API. Leave blank to work entirely offline with pasted JSON.</p>
+        <input id="release-url" type="url" inputmode="url" placeholder="https://github.com/owner/repo/releases/tag/v1.2.3">
+        <div class="actions">
+          <button class="secondary" id="fetch-release" type="button">Fetch public release</button>
+        </div>
+        <p class="status" id="fetch-status" role="status"></p>
+
+        <label for="contract">Release contract JSON</label>
+        <p class="hint">Patterns are JavaScript regular expressions. Match every filename from start to finish with <code>^</code> and <code>$</code>.</p>
+        <textarea id="contract" spellcheck="false" autocomplete="off" aria-describedby="contract-help"></textarea>
+        <p class="hint" id="contract-help">Required fields: <code>release</code> and <code>required</code>. Optional: <code>checksumFiles</code> and <code>references</code>.</p>
+
+        <label for="assets">Release assets JSON</label>
+        <p class="hint">Accepts a GitHub release API object, its <code>assets</code> array, or an array of <code>{"name","size","digest"}</code> objects.</p>
+        <textarea id="assets" spellcheck="false" autocomplete="off" placeholder='[{"name":"Acme-1.0.0-x64.zip","size":48120,"digest":"sha256:..."}]'></textarea>
+
+        <label for="checksums">Optional checksum file contents</label>
+        <p class="hint">Paste standard SHA-256 lines when the API does not provide asset digests.</p>
+        <textarea id="checksums" spellcheck="false" autocomplete="off" placeholder="0123...abcd  Acme-1.0.0-x64.zip"></textarea>
+
+        <div class="actions">
+          <button id="run" type="button">Run preflight</button>
+          <button class="secondary" id="load-sample" type="button">Load failing sample</button>
+          <button class="secondary" id="clear" type="button">Clear</button>
+        </div>
+        <p class="status" id="input-status" role="status"></p>
+      </section>
+
+      <section class="panel results" aria-labelledby="result-title">
+        <div class="eyebrow">Deterministic result</div>
+        <h2 id="result-title">Release verdict</h2>
+        <div id="empty" class="empty">Load the synthetic sample or provide a contract and asset inventory.</div>
+        <div id="report" hidden>
+          <div class="summary">
+            <div class="metric"><strong id="error-count">0</strong><span>blocking errors</span></div>
+            <div class="metric"><strong id="warning-count">0</strong><span>warnings</span></div>
+            <div class="metric"><strong id="asset-count">0</strong><span>assets inspected</span></div>
+          </div>
+          <div class="verdict" id="verdict"></div>
+          <ul id="findings" aria-live="polite"></ul>
+          <div class="actions">
+            <button class="secondary" id="download-json" type="button">Download JSON evidence</button>
+            <button class="secondary" id="download-html" type="button">Download HTML report</button>
+          </div>
+          <p class="fine">A passing inventory proves only the declared artifact contract. It does not prove that installers run, signatures are valid, or software is secure.</p>
+        </div>
+      </section>
+    </div>
+
+    <section class="integration" aria-labelledby="integration-title">
+      <div class="integration-grid">
+        <div>
+          <div class="eyebrow">Fixed-scope implementation</div>
+          <h2 id="integration-title">Put the contract in CI for US$49.</h2>
+          <p>FirstPass turns one public repository's supported-platform promise into a versioned contract and a blocking GitHub Actions preflight, then proves both a passing fixture and a deliberately broken release fixture.</p>
+          <ul>
+            <li>One public repository and one release workflow</li>
+            <li>Platform, architecture, filename, checksum, and documentation-reference rules</li>
+            <li>Machine-readable evidence artifact on every run</li>
+            <li>Passing and failing fixtures plus exact acceptance checks</li>
+            <li>One revision within seven days</li>
+          </ul>
+          <div class="actions">
+            <a class="button" href="https://github.com/Mmxfq/firstpass-site/issues/new?template=release-contract-integration.yml">Request the US$49 integration</a>
+          </div>
+          <p class="fine">Public intake first. Payment is requested only after fit and scope are confirmed. No repository write access or secrets are requested.</p>
+        </div>
+        <aside>
+          <div class="eyebrow">Founding package</div>
+          <div class="price">US$49</div>
+          <strong>One repository · two business days</strong>
+          <p class="fine">Configuration and integration only. It does not include building missing binaries, code signing, secret setup, release ownership, or production deployment.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="how">
+      <div class="eyebrow">Why a contract</div>
+      <h2>Green builds can still publish incomplete releases.</h2>
+      <div class="steps">
+        <div class="step"><strong>Declare coverage</strong>Name every promised platform and architecture as an explicit filename rule.</div>
+        <div class="step"><strong>Inspect the upload</strong>Validate the actual release inventory—not a source checkout or pre-upload staging directory.</div>
+        <div class="step"><strong>Keep evidence</strong>Export a report that records the exact rules, assets, and failures behind the release decision.</div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap">FirstPass · Release Contract Preflight · Inventory validation, not security testing, code-signing verification, or compatibility certification.</div></footer>
+
+  <script>
+    const elements = {
+      url: document.getElementById("release-url"),
+      contract: document.getElementById("contract"),
+      assets: document.getElementById("assets"),
+      checksums: document.getElementById("checksums"),
+      fetchStatus: document.getElementById("fetch-status"),
+      inputStatus: document.getElementById("input-status"),
+      empty: document.getElementById("empty"),
+      report: document.getElementById("report"),
+      findings: document.getElementById("findings"),
+      verdict: document.getElementById("verdict")
+    };
+
+    let lastReport = null;
+
+    const sampleContract = {
+      release: "v2.4.0",
+      required: [
+        { id: "windows-x64", label: "Windows x64 installer", pattern: "^Acme-2\\.4\\.0-x64\\.exe$", checksum: true },
+        { id: "linux-x64-deb", label: "Linux x64 Debian package", pattern: "^Acme-2\\.4\\.0-amd64\\.deb$", checksum: true },
+        { id: "linux-x64-appimage", label: "Linux x64 AppImage", pattern: "^Acme-2\\.4\\.0-x86_64\\.AppImage$", checksum: true }
+      ],
+      checksumFiles: ["SHA256SUMS.txt"],
+      references: ["Acme-2.4.0-x64.exe", "Acme-2.4.0-x86_64.AppImage"]
+    };
+
+    const sampleAssets = [
+      { name: "Acme-2.4.0-x64.exe", size: 12481024, digest: "sha256:2f6b7f0d5d6126992fe65c6e1ee44ecdf9c9015daaf378bb80c2fa29005fd7f8" },
+      { name: "Acme-2.4.0-amd64.deb", size: 6319104, digest: null },
+      { name: "SHA256SUMS.txt", size: 0, digest: null },
+      { name: "release-notes.json", size: 840, digest: "sha256:996987ad5c52bfa7b8a9164d6834130a3b0c999240097a46f323ce28545c2a46" }
+    ];
+
+    function parseJson(text, label) {
+      if (!text.trim()) throw new Error(`${label} is empty.`);
+      try {
+        return JSON.parse(text);
+      } catch (error) {
+        throw new Error(`${label} is not valid JSON: ${error.message}`);
+      }
+    }
+
+    function normalizeAssets(value) {
+      const items = Array.isArray(value) ? value : value && Array.isArray(value.assets) ? value.assets : null;
+      if (!items) throw new Error("Assets JSON must be an array or a GitHub release object with an assets array.");
+      return items.map((asset, index) => {
+        if (!asset || typeof asset.name !== "string" || !asset.name.trim()) {
+          throw new Error(`Asset ${index + 1} needs a non-empty name.`);
+        }
+        const size = Number(asset.size);
+        return {
+          name: asset.name.trim(),
+          size: Number.isFinite(size) ? size : null,
+          digest: typeof asset.digest === "string" ? asset.digest : null,
+          url: typeof asset.browser_download_url === "string" ? asset.browser_download_url : null
+        };
+      });
+    }
+
+    function normalizeContract(value) {
+      if (!value || typeof value !== "object" || Array.isArray(value)) throw new Error("Contract must be a JSON object.");
+      if (typeof value.release !== "string" || !value.release.trim()) throw new Error("Contract needs a release string.");
+      if (!Array.isArray(value.required) || value.required.length === 0) throw new Error("Contract needs at least one required asset rule.");
+      const required = value.required.map((rule, index) => {
+        if (!rule || typeof rule.pattern !== "string" || !rule.pattern) {
+          throw new Error(`Required rule ${index + 1} needs a pattern.`);
+        }
+        let regex;
+        try {
+          regex = new RegExp(rule.pattern);
+        } catch (error) {
+          throw new Error(`Required rule ${index + 1} has an invalid pattern: ${error.message}`);
+        }
+        return {
+          id: typeof rule.id === "string" && rule.id ? rule.id : `rule-${index + 1}`,
+          label: typeof rule.label === "string" && rule.label ? rule.label : rule.id || `Required asset ${index + 1}`,
+          pattern: rule.pattern,
+          checksum: Boolean(rule.checksum),
+          regex
+        };
+      });
+      const checksumFiles = Array.isArray(value.checksumFiles) ? value.checksumFiles : [];
+      const references = Array.isArray(value.references) ? value.references : [];
+      if (![...checksumFiles, ...references].every((item) => typeof item === "string" && item.trim())) {
+        throw new Error("checksumFiles and references must contain only non-empty strings.");
+      }
+      return { release: value.release.trim(), required, checksumFiles, references };
+    }
+
+    function checksumNames(text) {
+      const names = new Set();
+      for (const line of text.split(/\r?\n/)) {
+        const match = line.trim().match(/^[a-f0-9]{64}\s+\*?(.+)$/i);
+        if (match) names.add(match[1].trim().replace(/^\.?\//, ""));
+      }
+      return names;
+    }
+
+    function addFinding(findings, level, code, title, detail) {
+      findings.push({ level, code, title, detail });
+    }
+
+    function validate(contract, assets, checksumText) {
+      const findings = [];
+      const checksumEntries = checksumNames(checksumText);
+      const matchedNames = new Set();
+      const names = new Map();
+
+      for (const asset of assets) {
+        const key = asset.name.toLocaleLowerCase();
+        const existing = names.get(key) || [];
+        existing.push(asset.name);
+        names.set(key, existing);
+        if (asset.size !== null && asset.size <= 0) {
+          addFinding(findings, "error", "EMPTY_ASSET", "Empty release asset", `${asset.name} reports ${asset.size} bytes.`);
+        }
+      }
+
+      for (const duplicates of names.values()) {
+        if (duplicates.length > 1) {
+          addFinding(findings, "error", "DUPLICATE_NAME", "Duplicate asset name", `${duplicates.join(", ")} collide when compared case-insensitively.`);
+        }
+      }
+
+      for (const rule of contract.required) {
+        const matches = assets.filter((asset) => {
+          rule.regex.lastIndex = 0;
+          return rule.regex.test(asset.name);
+        });
+        if (matches.length === 0) {
+          addFinding(findings, "error", "MISSING_REQUIRED", `Missing ${rule.label}`, `No asset matches ${rule.pattern}.`);
+          continue;
+        }
+        if (matches.length > 1) {
+          addFinding(findings, "error", "AMBIGUOUS_REQUIRED", `Multiple assets match ${rule.label}`, `${matches.map((asset) => asset.name).join(", ")} all match ${rule.pattern}.`);
+          matches.forEach((asset) => matchedNames.add(asset.name));
+          continue;
+        }
+        const asset = matches[0];
+        matchedNames.add(asset.name);
+        if (rule.checksum) {
+          const apiDigest = typeof asset.digest === "string" && /^sha256:[a-f0-9]{64}$/i.test(asset.digest);
+          const listedDigest = checksumEntries.has(asset.name);
+          if (!apiDigest && !listedDigest) {
+            addFinding(findings, "error", "CHECKSUM_GAP", `No SHA-256 evidence for ${rule.label}`, `${asset.name} has neither a GitHub API SHA-256 digest nor a matching pasted checksum line.`);
+          } else {
+            addFinding(findings, "pass", "CHECKSUM_PRESENT", `Checksum covered: ${rule.label}`, apiDigest ? "GitHub API digest is present." : "Pasted checksum inventory contains the exact filename.");
+          }
+        } else {
+          addFinding(findings, "pass", "REQUIRED_PRESENT", `Present: ${rule.label}`, asset.name);
+        }
+      }
+
+      for (const checksumFile of contract.checksumFiles) {
+        const matches = assets.filter((asset) => asset.name === checksumFile);
+        if (matches.length === 0) {
+          addFinding(findings, "error", "MISSING_CHECKSUM_FILE", "Missing checksum file", `${checksumFile} is declared by the contract but absent from the release.`);
+        } else {
+          matchedNames.add(checksumFile);
+          if (matches.some((asset) => asset.size !== null && asset.size <= 0)) {
+            addFinding(findings, "error", "EMPTY_CHECKSUM_FILE", "Checksum file is empty", `${checksumFile} exists but contains no bytes.`);
+          } else {
+            addFinding(findings, "pass", "CHECKSUM_FILE_PRESENT", "Checksum file present", checksumFile);
+          }
+        }
+      }
+
+      const exactNames = new Set(assets.map((asset) => asset.name));
+      for (const reference of contract.references) {
+        if (!exactNames.has(reference)) {
+          addFinding(findings, "error", "BROKEN_REFERENCE", "Referenced filename is not published", `${reference} is named by the contract but absent from the release.`);
+        } else {
+          matchedNames.add(reference);
+          addFinding(findings, "pass", "REFERENCE_VALID", "Published reference resolves", reference);
+        }
+      }
+
+      const unmatched = assets.filter((asset) => !matchedNames.has(asset.name));
+      if (unmatched.length) {
+        addFinding(findings, "warning", "UNDECLARED_ASSETS", "Assets outside the declared contract", unmatched.map((asset) => asset.name).join(", "));
+      }
+
+      if (!findings.some((finding) => finding.level === "error")) {
+        addFinding(findings, "pass", "CONTRACT_SATISFIED", "Declared release contract satisfied", `${contract.required.length} required rule${contract.required.length === 1 ? "" : "s"} passed for ${contract.release}.`);
+      }
+
+      const counts = {
+        error: findings.filter((finding) => finding.level === "error").length,
+        warning: findings.filter((finding) => finding.level === "warning").length,
+        pass: findings.filter((finding) => finding.level === "pass").length
+      };
+
+      return {
+        schemaVersion: 1,
+        generatedAt: new Date().toISOString(),
+        release: contract.release,
+        verdict: counts.error ? "fail" : counts.warning ? "pass-with-warnings" : "pass",
+        counts,
+        assetCount: assets.length,
+        contract: {
+          required: contract.required.map(({ regex, ...rule }) => rule),
+          checksumFiles: contract.checksumFiles,
+          references: contract.references
+        },
+        assets,
+        findings
+      };
+    }
+
+    function findingElement(finding) {
+      const item = document.createElement("li");
+      item.className = "finding";
+      const head = document.createElement("div");
+      head.className = "finding-head";
+      const title = document.createElement("strong");
+      title.textContent = finding.title;
+      const badge = document.createElement("span");
+      badge.className = `badge ${finding.level}`;
+      badge.textContent = finding.level;
+      head.append(title, badge);
+      const detail = document.createElement("p");
+      detail.textContent = `${finding.code} · ${finding.detail}`;
+      item.append(head, detail);
+      return item;
+    }
+
+    function render(result) {
+      lastReport = result;
+      document.getElementById("error-count").textContent = result.counts.error;
+      document.getElementById("warning-count").textContent = result.counts.warning;
+      document.getElementById("asset-count").textContent = result.assetCount;
+      elements.verdict.className = `verdict ${result.verdict === "fail" ? "fail" : result.verdict === "pass-with-warnings" ? "warn" : ""}`;
+      elements.verdict.textContent = result.verdict === "fail"
+        ? `Do not announce ${result.release}: the declared contract has blocking failures.`
+        : result.verdict === "pass-with-warnings"
+          ? `${result.release} satisfies the declared contract with warnings to review.`
+          : `${result.release} satisfies the declared artifact contract.`;
+      elements.findings.replaceChildren(...result.findings.map(findingElement));
+      elements.empty.hidden = true;
+      elements.report.hidden = false;
+    }
+
+    function run() {
+      elements.inputStatus.textContent = "";
+      try {
+        const contract = normalizeContract(parseJson(elements.contract.value, "Contract"));
+        const assets = normalizeAssets(parseJson(elements.assets.value, "Assets"));
+        render(validate(contract, assets, elements.checksums.value));
+        elements.inputStatus.textContent = `Inspected ${assets.length} asset${assets.length === 1 ? "" : "s"} locally.`;
+      } catch (error) {
+        elements.inputStatus.textContent = error.message;
+      }
+    }
+
+    function githubApiUrl(rawUrl) {
+      const url = new URL(rawUrl);
+      if (url.hostname !== "github.com") throw new Error("Use a public github.com release URL.");
+      const parts = url.pathname.split("/").filter(Boolean);
+      if (parts.length < 4 || parts[2] !== "releases") throw new Error("Use a GitHub release URL, not a repository homepage.");
+      const owner = encodeURIComponent(parts[0]);
+      const repo = encodeURIComponent(parts[1]);
+      if (parts[3] === "latest") return `https://api.github.com/repos/${owner}/${repo}/releases/latest`;
+      if (parts[3] === "tag" && parts[4]) return `https://api.github.com/repos/${owner}/${repo}/releases/tags/${encodeURIComponent(decodeURIComponent(parts.slice(4).join("/")))}`;
+      throw new Error("Use a /releases/tag/... or /releases/latest URL.");
+    }
+
+    async function fetchRelease() {
+      const button = document.getElementById("fetch-release");
+      elements.fetchStatus.textContent = "";
+      try {
+        if (!elements.url.value.trim()) throw new Error("Enter a public GitHub release URL first.");
+        button.disabled = true;
+        elements.fetchStatus.textContent = "Fetching public release metadata from GitHub…";
+        const response = await fetch(githubApiUrl(elements.url.value.trim()), {
+          headers: { Accept: "application/vnd.github+json" }
+        });
+        if (!response.ok) throw new Error(`GitHub returned HTTP ${response.status}. Check that the release is public and the tag exists.`);
+        const release = await response.json();
+        elements.assets.value = JSON.stringify(release.assets || [], null, 2);
+        elements.fetchStatus.textContent = `Loaded ${(release.assets || []).length} assets from ${release.tag_name || "the public release"}.`;
+        if (!elements.contract.value.trim() && release.tag_name) {
+          elements.contract.value = JSON.stringify({
+            release: release.tag_name,
+            required: [
+              { id: "replace-me", label: "Replace with one promised artifact", pattern: "^replace-me$", checksum: true }
+            ],
+            checksumFiles: [],
+            references: []
+          }, null, 2);
+        }
+      } catch (error) {
+        elements.fetchStatus.textContent = error.message;
+      } finally {
+        button.disabled = false;
+      }
+    }
+
+    function download(filename, type, content) {
+      const blob = new Blob([content], { type });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = filename;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    }
+
+    function safeHtml(value) {
+      return String(value).replace(/[&<>"']/g, (character) => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#039;"
+      })[character]);
+    }
+
+    function htmlReport(result) {
+      const rows = result.findings.map((finding) =>
+        `<li><strong>${safeHtml(finding.level.toUpperCase())} — ${safeHtml(finding.title)}</strong><br>${safeHtml(finding.code)} · ${safeHtml(finding.detail)}</li>`
+      ).join("");
+      return `<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Release preflight: ${safeHtml(result.release)}</title><style>body{max-width:820px;margin:40px auto;padding:0 20px;color:#17211b;font:16px/1.55 system-ui}h1{font:500 2.6rem Georgia,serif}li{margin:12px 0;padding:12px;border:1px solid #d7d0c3;border-radius:8px}.meta{color:#59645d}</style><h1>${safeHtml(result.release)}: ${safeHtml(result.verdict)}</h1><p class="meta">Generated ${safeHtml(result.generatedAt)} · ${result.assetCount} assets · ${result.counts.error} errors · ${result.counts.warning} warnings · ${result.counts.pass} passes</p><ol>${rows}</ol><p class="meta">Generated by FirstPass Release Contract Preflight. This report validates only the declared artifact inventory.</p></html>`;
+    }
+
+    document.getElementById("run").addEventListener("click", run);
+    document.getElementById("fetch-release").addEventListener("click", fetchRelease);
+    document.getElementById("load-sample").addEventListener("click", () => {
+      elements.url.value = "";
+      elements.contract.value = JSON.stringify(sampleContract, null, 2);
+      elements.assets.value = JSON.stringify(sampleAssets, null, 2);
+      elements.checksums.value = `${"a".repeat(64)}  Acme-2.4.0-amd64.deb`;
+      elements.fetchStatus.textContent = "";
+      elements.inputStatus.textContent = "Synthetic failing release loaded.";
+      run();
+    });
+    document.getElementById("clear").addEventListener("click", () => {
+      elements.url.value = "";
+      elements.contract.value = "";
+      elements.assets.value = "";
+      elements.checksums.value = "";
+      elements.fetchStatus.textContent = "";
+      elements.inputStatus.textContent = "Cleared. Nothing was stored.";
+      elements.report.hidden = true;
+      elements.empty.hidden = false;
+      lastReport = null;
+      elements.contract.focus();
+    });
+    document.getElementById("download-json").addEventListener("click", () => {
+      if (lastReport) download(`release-preflight-${lastReport.release}.json`, "application/json", `${JSON.stringify(lastReport, null, 2)}\n`);
+    });
+    document.getElementById("download-html").addEventListener("click", () => {
+      if (lastReport) download(`release-preflight-${lastReport.release}.html`, "text/html", htmlReport(lastReport));
+    });
+
+    elements.contract.value = JSON.stringify(sampleContract, null, 2);
+  </script>
+</body>
+</html>

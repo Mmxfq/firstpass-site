@@ -1,0 +1,60 @@
+name: Request release contract integration
+description: Confirm fit for the US$49 founding package. No payment is due yet.
+title: "Release contract integration: "
+labels:
+  - order-request
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Share only public repository and release information.
+        Do not include tokens, signing material, private code, customer data, email addresses, or payment details.
+
+  - type: input
+    id: repository
+    attributes:
+      label: Public repository URL
+      placeholder: https://github.com/example/tool
+    validations:
+      required: true
+
+  - type: input
+    id: workflow
+    attributes:
+      label: Public release workflow
+      description: Link the workflow file or describe how release assets are currently published.
+      placeholder: https://github.com/example/tool/blob/main/.github/workflows/release.yml
+    validations:
+      required: true
+
+  - type: textarea
+    id: platforms
+    attributes:
+      label: Promised platforms and architectures
+      description: List only the combinations users are publicly told to expect.
+      placeholder: |
+        Windows x64 — .exe installer
+        Linux x64 — .deb and .AppImage
+        macOS arm64 — .dmg
+    validations:
+      required: true
+
+  - type: input
+    id: example
+    attributes:
+      label: Representative public release
+      placeholder: https://github.com/example/tool/releases/tag/v1.2.3
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Scope confirmation
+      options:
+        - label: I understand the US$49 scope covers one public repository, one release workflow, a versioned contract, a blocking GitHub Actions preflight, two fixtures, evidence output, and one revision.
+          required: true
+        - label: I understand this does not include building binaries, code signing, secret setup, repository write access, release ownership, or production deployment.
+          required: true
+        - label: I understand work begins only after public scope confirmation and cleared payment.
+          required: true
