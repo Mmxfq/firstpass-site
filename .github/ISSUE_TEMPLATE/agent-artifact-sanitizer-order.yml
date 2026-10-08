@@ -1,0 +1,48 @@
+name: Request Agent Artifact Sanitizer
+description: Confirm availability for the US$29 individual or US$49 agency license. No payment is due yet.
+title: "Agent Artifact Sanitizer request: "
+labels:
+  - order-request
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This public issue is only for license and delivery coordination.
+        Do not include or attach credentials, secrets, private files, customer data, payment details, or email addresses.
+
+  - type: dropdown
+    id: license
+    attributes:
+      label: License
+      options:
+        - Individual — US$29
+        - Agency or consultancy — US$49
+    validations:
+      required: true
+
+  - type: dropdown
+    id: use
+    attributes:
+      label: Primary use
+      options:
+        - Sanitize MCP configuration and setup files
+        - Sanitize agent traces or logs
+        - Prepare a support or issue handoff
+        - Prepare a client handoff
+        - Another local artifact handoff
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Confirmation
+      options:
+        - label: I have not included or attached credentials, private files, customer data, payment details, or an email address.
+          required: true
+        - label: I understand delivery begins after availability is confirmed and payment has cleared.
+          required: true
+        - label: I understand the license does not permit resale, redistribution, sublicensing, or offering the file as a hosted tool.
+          required: true
+        - label: I understand this is directional pattern screening, not a security audit, credential validation, or compliance certification.
+          required: true

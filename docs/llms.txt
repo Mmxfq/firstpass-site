@@ -15,7 +15,7 @@ DIY product: SaaS Hero Rewrite Kit, US$9: https://mmxfq.github.io/firstpass-site
 Developer tool release check, US$25: https://mmxfq.github.io/firstpass-site/release-check.html
 Free developer tool release checklist: https://mmxfq.github.io/firstpass-site/release-checklist.html
 Free SaaS Hero Brief Builder: https://mmxfq.github.io/firstpass-site/hero-brief.html
-Free offline Agent Secret Check: https://mmxfq.github.io/firstpass-site/agent-secret-check.html
+Agent Artifact Sanitizer, US$29 individual or US$49 agency, with free pasted-text demo: https://mmxfq.github.io/firstpass-site/agent-secret-check.html
 ASC Monthly Collections Workbook, US$39: https://mmxfq.github.io/firstpass-site/asc-collections-workbook.html
 Custom browser lead magnet sprint, US$99: https://mmxfq.github.io/firstpass-site/browser-tool-sprint.html
 Free Hero Rewrite Kit sample: https://mmxfq.github.io/firstpass-site/hero-kit-sample.txt
@@ -40,9 +40,21 @@ Order inquiry: https://github.com/Mmxfq/firstpass-site/issues/new?template=order
 - Fix proof: https://github.com/abird-ai/agentc/issues/1 documents a maintainer-confirmed Windows setup defect, two implemented fixes, regression coverage, and a successful real-Windows CRLF and ConPTY retest.
 - Order inquiry: https://github.com/Mmxfq/firstpass-site/issues/new?template=release-check-request.yml
 
+## Agent Artifact Sanitizer
+
+- Price: US$29 for an individual license or US$49 for one agency or consultancy.
+- Delivery: one self-contained HTML file after availability confirmation and cleared payment.
+- Scope: selected MCP configurations, agent traces, logs, reports, Markdown, environment files, and ZIP archives; up to 200 text files, 2 MB each and 10 MB total.
+- Deliverables: sanitized file copies in a new ZIP, a findings report, a credential-rotation checklist, repeated-value detection across files, and broad agent-permission warnings.
+- Privacy: the tool runs locally with no installation, uploads, analytics, storage, or network requests.
+- Artifact proof: version 1.0 is 22,959 bytes; SHA-256 a0be213b3a6d513e958ba6e2d4a4525dec713e6c0259fdca294cd44c3779b2a1; a synthetic three-file bundle passed ZIP round-trip and zero-leak checks.
+- License boundary: no resale, redistribution, sublicensing, or hosted-tool use.
+- Product page and free pasted-text demo: https://mmxfq.github.io/firstpass-site/agent-secret-check.html
+- Order inquiry: https://github.com/Mmxfq/firstpass-site/issues/new?template=agent-artifact-sanitizer-order.yml
+
 ## Agent credential boundary check
 
-- Free tool: an offline browser scanner for credential-shaped values and broad agent permissions in prompts, MCP configurations, logs, and setup documentation.
+- Separate service: the US$25 review examines one public agent or MCP setup path; it is not the downloadable sanitizer license.
 - Price: US$25 founding price for one public setup-path review.
 - Turnaround: one business day after scope confirmation and cleared payment.
 - Scope: one public agent or MCP onboarding path, one primary client, and already-redacted examples only. No live credentials are requested.
