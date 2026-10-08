@@ -13,10 +13,10 @@ homepage.
 One specific point: {{PERSONALIZED_OBSERVATION}}. A clearer version could be:
 "{{MICRO_REWRITE}}"
 
-I offer a 24-hour conversion teardown for newly launched SaaS sites: 10+
-prioritized findings, a complete hero rewrite, and a seven-day action plan.
-The founding-client price is $49, with a refund if there is no actionable
-recommendation.
+I offer a 24-hour first-click teardown for newly launched SaaS sites: a live
+desktop/mobile trace from homepage to public signup, 10+ cited findings, a
+complete hero rewrite, and reproducible acceptance checks. The founding-client
+price is $49, with a refund if there is no actionable recommendation.
 
 Details and a sample: {{OFFER_URL}}
 
@@ -30,15 +30,10 @@ Hi {{NAME}} — saw {{PRODUCT}} on {{LAUNCH_SOURCE}}. The product looks useful,
 but the homepage currently {{PERSONALIZED_OBSERVATION}}. I drafted one possible
 headline: "{{MICRO_REWRITE}}"
 
-I can deliver an evidence-checked 10+ point conversion teardown plus the full hero
-rewrite within 24 hours for $49. Details: {{OFFER_URL}}. No follow-up if it is
-not relevant.
-
-## One permitted follow-up
-
-Hi {{NAME}} — closing the loop on the {{PRODUCT}} homepage note I sent. I kept
-the founding-client slot open, but there is no need to respond if now is not a
-fit. The specific change I would test first is {{FIRST_TEST}}.
+I can deliver an evidence-checked desktop/mobile homepage-to-signup trace, 10+
+cited findings, the full hero rewrite, and acceptance checks within 24 hours for
+$49. A recent public report led Botscent to add Cursor-browser detection in its
+next release. Details: {{OFFER_URL}}. No follow-up if it is not relevant.
 
 ## Chinese contact-form version
 

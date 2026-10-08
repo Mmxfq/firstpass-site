@@ -1,18 +1,22 @@
 # FirstPass
 
-A fixed-scope, evidence-checked homepage conversion teardown for newly launched
-SaaS products.
+A fixed-scope, evidence-checked first-click teardown for newly launched SaaS
+products.
 
 ## Founding package — US$49
 
-- 10+ prioritized findings tied to visible page evidence
+- desktop and mobile homepage-to-public-signup trace
+- 10+ prioritized findings tied to screenshot or URL evidence
 - complete hero rewrite: eyebrow, headline, subheadline, CTA, and trust line
-- seven-day action plan
+- reproducible acceptance checks
 - one clarification round
 - delivery within one business day after scope confirmation
 
 No meeting or account access is required. FirstPass reviews public marketing
 pages only. It does not include implementation or guarantee commercial results.
+
+A public FirstPass report led Botscent to add Cursor-browser detection in its
+v1.1.0 release.
 
 [View the complete scope](https://mmxfq.github.io/firstpass-site/) ·
 [Request a teardown](https://github.com/Mmxfq/firstpass-site/issues/new?template=order-request.yml) ·
