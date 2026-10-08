@@ -131,6 +131,11 @@
           <p>A newly launched CLI advertised <code>npx one-step-seo</code>, but the public npm registry returned E404. A source checkout installed cleanly, passed 39/39 checks, and completed a real audit. The report isolated the problem to publication and supplied three command-level acceptance checks.</p>
           <a href="https://github.com/6t9xstar/one-step-seo/issues/1">Read the public reproduction →</a>
         </div>
+        <div class="sample">
+          <strong>Verified fix — one Windows report exposed two first-run failures.</strong>
+          <p>Agentc's published binary passed version, help, networking, tool, and shell checks, but CRLF input shifted consecutive setup answers. The maintainer confirmed the diagnosis, found a related real-console early exit, fixed both, and added regression coverage. A fresh Windows build then passed both the redirected-input reproduction and a real ConPTY setup with one Enter per prompt.</p>
+          <a href="https://github.com/abird-ai/agentc/issues/1">Read the report, maintainer response, and Windows verification →</a>
+        </div>
       </div>
     </section>
 

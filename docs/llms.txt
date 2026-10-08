@@ -32,7 +32,8 @@ Order inquiry: https://github.com/Mmxfq/firstpass-site/issues/new?template=order
 - Turnaround: one business day after scope confirmation and cleared payment.
 - Scope: one public CLI or developer tool and its documented Windows install and first-run path.
 - Deliverables: registry and release discovery checks, the exact advertised install/help/happy-path run, at least five cited findings or verified passes, reproduction details, and command-level acceptance checks.
-- Proof: https://github.com/6t9xstar/one-step-seo/issues/1 isolates an npm E404 launch blocker after the source checkout passed 39/39 checks and completed a real audit.
+- Publication proof: https://github.com/6t9xstar/one-step-seo/issues/1 isolates an npm E404 launch blocker after the source checkout passed 39/39 checks and completed a real audit.
+- Fix proof: https://github.com/abird-ai/agentc/issues/1 documents a maintainer-confirmed Windows setup defect, two implemented fixes, regression coverage, and a successful real-Windows CRLF and ConPTY retest.
 - Order inquiry: https://github.com/Mmxfq/firstpass-site/issues/new?template=release-check-request.yml
 
 ## Evidence policy
