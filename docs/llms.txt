@@ -15,6 +15,8 @@ DIY product: SaaS Hero Rewrite Kit, US$9: https://mmxfq.github.io/firstpass-site
 Developer tool release check, US$25: https://mmxfq.github.io/firstpass-site/release-check.html
 Free developer tool release checklist: https://mmxfq.github.io/firstpass-site/release-checklist.html
 Free SaaS Hero Brief Builder: https://mmxfq.github.io/firstpass-site/hero-brief.html
+Free offline Agent Secret Check: https://mmxfq.github.io/firstpass-site/agent-secret-check.html
+ASC Monthly Collections Workbook, US$39: https://mmxfq.github.io/firstpass-site/asc-collections-workbook.html
 Custom browser lead magnet sprint, US$99: https://mmxfq.github.io/firstpass-site/browser-tool-sprint.html
 Free Hero Rewrite Kit sample: https://mmxfq.github.io/firstpass-site/hero-kit-sample.txt
 Order inquiry: https://github.com/Mmxfq/firstpass-site/issues/new?template=order-request.yml
@@ -37,6 +39,30 @@ Order inquiry: https://github.com/Mmxfq/firstpass-site/issues/new?template=order
 - Release-pass proof: https://github.com/zevem/neptune/issues/116 verifies a published Windows installer, a clean source build, and byte-identical native first-run captures.
 - Fix proof: https://github.com/abird-ai/agentc/issues/1 documents a maintainer-confirmed Windows setup defect, two implemented fixes, regression coverage, and a successful real-Windows CRLF and ConPTY retest.
 - Order inquiry: https://github.com/Mmxfq/firstpass-site/issues/new?template=release-check-request.yml
+
+## Agent credential boundary check
+
+- Free tool: an offline browser scanner for credential-shaped values and broad agent permissions in prompts, MCP configurations, logs, and setup documentation.
+- Price: US$25 founding price for one public setup-path review.
+- Turnaround: one business day after scope confirmation and cleared payment.
+- Scope: one public agent or MCP onboarding path, one primary client, and already-redacted examples only. No live credentials are requested.
+- Deliverables: secret-through-chat findings, permission-boundary findings, safe handoff recommendations, and exact regression criteria.
+- Exclusions: penetration testing, credential validation, private configuration, compliance certification, or implementation.
+- Public market signal: https://github.com/panelalpha/panelalpha-engine/issues/27
+- Order inquiry: https://github.com/Mmxfq/firstpass-site/issues/new?template=agent-credential-request.yml
+
+## ASC Monthly Collections Workbook
+
+- Price: US$39 one-time.
+- Delivery: a ready-to-deliver, macro-free Excel .xlsx workbook after availability confirmation and cleared payment.
+- Intended users: ASC administrators, revenue-cycle managers, finance or operations managers, billing-company operators, and consultants.
+- Scope: 24 months of aggregate charges, payments, refunds, adjustments, bad debt, and beginning and ending A/R. No patient-level data or PHI.
+- Calculations: net cash collections, collectible charges, net and gross collection percentages, refund and adjustment rates, A/R movement, approximate days in A/R, rolling trends, and threshold-based exception flags.
+- Included sheets: START HERE, Monthly Input, Dashboard, and Data Dictionary.
+- Artifact proof: version 1.0 is 26,399 bytes; SHA-256 e2a53422aa636e65fc2ddc0204deef4067bf93eeb5791cb4fcdefd6bad409b43; synthetic sample formulas and dashboard were recalculated in Microsoft Excel.
+- Boundaries: aggregate operational reporting only—not billing, accounting, compliance, reimbursement, coding, legal, or financial advice.
+- Product page: https://mmxfq.github.io/firstpass-site/asc-collections-workbook.html
+- Order inquiry: https://github.com/Mmxfq/firstpass-site/issues/new?template=asc-collections-workbook-order.yml
 
 ## Custom browser lead magnet sprint
 

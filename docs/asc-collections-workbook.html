@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A ready-to-use $39 Excel workbook for aggregate ASC monthly charges, payments, refunds, adjustments, collection rates, A/R trends, and exception flags. No PHI.">
+  <link rel="canonical" href="https://mmxfq.github.io/firstpass-site/asc-collections-workbook.html">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="ASC Monthly Collections Workbook — FirstPass">
+  <meta property="og:description" content="Track aggregate charges, collections, refunds, adjustments, A/R, and exception flags in one ready-to-deliver Excel workbook.">
+  <meta property="og:url" content="https://mmxfq.github.io/firstpass-site/asc-collections-workbook.html">
+  <title>ASC Monthly Collections Workbook — FirstPass</title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "FirstPass ASC Monthly Collections Workbook",
+    "description": "An Excel workbook for aggregate ambulatory surgery center monthly collection reporting, trends, and exception flags.",
+    "brand": {"@type": "Brand", "name": "FirstPass"},
+    "offers": {
+      "@type": "Offer",
+      "price": "39",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "url": "https://mmxfq.github.io/firstpass-site/asc-collections-workbook.html"
+    }
+  }
+  </script>
+  <style>
+    :root {
+      --ink: #17211b;
+      --muted: #58645d;
+      --paper: #f5f1e8;
+      --card: #fffdf8;
+      --line: #d8d2c5;
+      --accent: #1e6848;
+      --accent-dark: #124832;
+      --warm: #e8bb62;
+      --danger: #8f2d22;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 88% 4%, rgba(232,187,98,.28), transparent 27rem),
+        var(--paper);
+      font: 17px/1.6 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1080px, calc(100% - 40px)); margin: auto; }
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 24px 0; font-weight: 800; }
+    nav a { text-decoration: none; }
+    nav small { color: var(--muted); }
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 54px;
+      align-items: center;
+      padding: 62px 0 84px;
+    }
+    .eyebrow {
+      color: var(--accent);
+      font-size: .78rem;
+      font-weight: 850;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    h1, h2 { font-family: Georgia, "Times New Roman", serif; font-weight: 500; letter-spacing: -.045em; }
+    h1 { margin: 12px 0 22px; font-size: clamp(3rem, 6.5vw, 5.9rem); line-height: .98; }
+    h2 { margin: 0 0 14px; font-size: clamp(2rem, 4vw, 3.4rem); line-height: 1.08; }
+    .lead { max-width: 700px; color: var(--muted); font-size: 1.18rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin-top: 30px; }
+    .button {
+      display: inline-block;
+      padding: 14px 21px;
+      border: 1px solid var(--ink);
+      border-radius: 999px;
+      background: var(--accent);
+      color: white;
+      font-weight: 800;
+      text-decoration: none;
+      box-shadow: 4px 4px 0 var(--ink);
+    }
+    .button:hover, .button:focus { background: var(--accent-dark); transform: translate(1px, 1px); box-shadow: 3px 3px 0 var(--ink); }
+    .price-card {
+      padding: 30px;
+      border: 1px solid var(--ink);
+      border-radius: 22px;
+      background: var(--card);
+      box-shadow: 8px 8px 0 var(--warm);
+    }
+    .price { margin: 5px 0; font: 500 4.4rem/1 Georgia, serif; }
+    .price-card ul { padding-left: 20px; }
+    .price-card small, .muted { color: var(--muted); }
+    .notice {
+      padding: 18px 20px;
+      border: 1px solid #d8a69f;
+      border-left: 5px solid var(--danger);
+      border-radius: 12px;
+      background: #fff3f1;
+      color: #63241c;
+      font-weight: 700;
+    }
+    section { padding: 76px 0; border-top: 1px solid var(--line); }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 32px; }
+    .card { padding: 24px; border: 1px solid var(--line); border-radius: 16px; background: rgba(255,253,248,.82); }
+    .card strong { display: block; margin-bottom: 8px; }
+    .number { display: block; color: var(--accent); font: 500 2.2rem/1 Georgia, serif; }
+    .workbook {
+      margin-top: 32px;
+      padding: 20px;
+      overflow-x: auto;
+      border: 1px solid var(--ink);
+      border-radius: 18px;
+      background: var(--card);
+      box-shadow: 6px 6px 0 var(--warm);
+    }
+    table { width: 100%; min-width: 760px; border-collapse: collapse; font-size: .9rem; }
+    th, td { padding: 12px; border: 1px solid var(--line); text-align: right; }
+    th { background: var(--ink); color: white; text-align: center; }
+    td:first-child { text-align: left; }
+    td.input { background: #fff3d7; }
+    td.formula { background: #e1f0e8; }
+    .flag { color: var(--danger); font-weight: 800; }
+    code { overflow-wrap: anywhere; }
+    .proof {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      margin-top: 30px;
+      padding: 1px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--line);
+    }
+    .proof div { padding: 20px; background: var(--card); }
+    .proof strong { display: block; color: var(--accent); }
+    .fine { color: var(--muted); font-size: .88rem; }
+    footer { padding: 40px 0 70px; color: var(--muted); }
+    @media (max-width: 760px) {
+      .hero { grid-template-columns: 1fr; gap: 34px; padding: 42px 0 66px; }
+      .grid { grid-template-columns: 1fr; }
+      .proof { grid-template-columns: 1fr 1fr; }
+      nav small { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <nav>
+      <a href="./">FirstPass</a>
+      <small>Aggregate ASC collections reporting. No PHI.</small>
+    </nav>
+    <div class="hero">
+      <div>
+        <div class="eyebrow">For ASC administrators and revenue-cycle teams</div>
+        <h1>Close the month without rebuilding the math.</h1>
+        <p class="lead">Enter aggregate charges, payments, refunds, adjustments, and A/R once. The workbook calculates collection rates, rolling trends, approximate days in A/R, and threshold-based exceptions automatically.</p>
+        <div class="actions">
+          <a class="button" href="https://github.com/Mmxfq/firstpass-site/issues/new?template=asc-collections-workbook-order.yml">Request the $39 workbook</a>
+          <a href="#preview">See the calculation preview</a>
+        </div>
+      </div>
+      <aside class="price-card" aria-label="Workbook details">
+        <div class="eyebrow">Ready-to-deliver v1.0</div>
+        <div class="price">$39</div>
+        <small>One-time purchase. Excel .xlsx file.</small>
+        <ul>
+          <li>24 monthly reporting rows</li>
+          <li>9 aggregate input fields</li>
+          <li>9 formula-driven outputs</li>
+          <li>Dashboard and trend chart</li>
+          <li>Editable exception thresholds</li>
+          <li>Data dictionary and one-page guide</li>
+        </ul>
+      </aside>
+    </div>
+    <p class="notice">Do not enter patient names, dates of birth, account numbers, procedure details, payer IDs, or other protected health information. This workbook is designed for aggregate month-level totals only.</p>
+  </header>
+
+  <main>
+    <section>
+      <div class="wrap">
+        <div class="eyebrow">One monthly close view</div>
+        <h2>See cash, adjustments, and A/R together.</h2>
+        <p class="lead">The workbook keeps the source values visible beside each calculated metric, so an exception can be traced back to the month-level inputs that produced it.</p>
+        <div class="grid">
+          <div class="card"><span class="number">01</span><strong>Enter aggregate totals</strong>Month, gross charges, payments, refunds, contractual and other adjustments, bad debt, and beginning and ending A/R.</div>
+          <div class="card"><span class="number">02</span><strong>Review consistent formulas</strong>Net cash, collectible charges, collection percentages, refund and adjustment rates, A/R movement, and approximate days in A/R.</div>
+          <div class="card"><span class="number">03</span><strong>Investigate exceptions</strong>Editable thresholds flag low net collection, elevated refunds or adjustments, and growing A/R without turning a flag into a diagnosis.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="preview">
+      <div class="wrap">
+        <div class="eyebrow">Synthetic preview</div>
+        <h2>Formula results remain inspectable.</h2>
+        <p class="muted">The figures below are fictional and appear in the included sample rows. Replace them before operational use.</p>
+        <div class="workbook" role="region" aria-label="Synthetic workbook calculation preview" tabindex="0">
+          <table>
+            <thead>
+              <tr>
+                <th>Month</th>
+                <th>Gross charges</th>
+                <th>Payments</th>
+                <th>Refunds</th>
+                <th>Collectible charges</th>
+                <th>Net collection</th>
+                <th>Ending A/R</th>
+                <th>Flag</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="input">Jan 2026</td>
+                <td class="input">$500,000</td>
+                <td class="input">$318,000</td>
+                <td class="input">$4,000</td>
+                <td class="formula">$336,000</td>
+                <td class="formula">93.5%</td>
+                <td class="input">$228,000</td>
+                <td class="formula flag">Below target</td>
+              </tr>
+              <tr>
+                <td class="input">Feb 2026</td>
+                <td class="input">$525,000</td>
+                <td class="input">$344,000</td>
+                <td class="input">$3,500</td>
+                <td class="formula">$355,000</td>
+                <td class="formula">95.9%</td>
+                <td class="input">$231,000</td>
+                <td class="formula">—</td>
+              </tr>
+              <tr>
+                <td class="input">Mar 2026</td>
+                <td class="input">$540,000</td>
+                <td class="input">$359,000</td>
+                <td class="input">$4,200</td>
+                <td class="formula">$365,500</td>
+                <td class="formula">97.1%</td>
+                <td class="input">$226,000</td>
+                <td class="formula">—</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="fine">Default net collection formula: (payments collected − refunds) ÷ (gross charges − contractual adjustments − approved other non-collectible adjustments). Definitions vary; confirm the denominator with your finance or revenue-cycle owner.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="eyebrow">Delivery proof</div>
+        <h2>The workbook already exists.</h2>
+        <p class="lead">Version 1.0 was generated, reopened, fully recalculated in Microsoft Excel, and checked against the synthetic sample before this page was published.</p>
+        <div class="proof">
+          <div><strong>4 sheets</strong>Start, input, dashboard, dictionary</div>
+          <div><strong>24 months</strong>Two years of monthly capacity</div>
+          <div><strong>26,399 bytes</strong>Macro-free .xlsx artifact</div>
+          <div><strong>Excel verified</strong>Sample formulas and dashboard recalculated</div>
+        </div>
+        <p class="fine">Artifact SHA-256: <code>e2a53422aa636e65fc2ddc0204deef4067bf93eeb5791cb4fcdefd6bad409b43</code></p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="eyebrow">Boundaries</div>
+        <h2>Operational reporting, not professional advice.</h2>
+        <div class="grid">
+          <div class="card"><strong>No PHI</strong>The workbook is intentionally limited to aggregate month-level values. It is not a patient ledger or claim tracker.</div>
+          <div class="card"><strong>No hidden logic</strong>Formula cells remain visible. Thresholds are editable. The data dictionary states what each field is intended to mean.</div>
+          <div class="card"><strong>No compliance claim</strong>This is not billing, accounting, compliance, reimbursement, coding, legal, or financial advice. Reconcile every month to your source system.</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="eyebrow">Order</div>
+        <h2>Request the ready-to-deliver workbook.</h2>
+        <p class="lead">The order request is public and asks only about role, spreadsheet application, and reporting cadence. Do not include patient data, PHI, private financial data, payment information, or an email address.</p>
+        <div class="actions">
+          <a class="button" href="https://github.com/Mmxfq/firstpass-site/issues/new?template=asc-collections-workbook-order.yml">Request it for $39</a>
+        </div>
+        <p class="fine">Availability and private payment and delivery instructions are confirmed before payment is due. Delivery begins only after cleared payment. The workbook may not be redistributed, resold, or published.</p>
+        <p class="fine">Built from a <a href="https://www.aapc.com/discuss/threads/asc-benchmark-spreadsheet.236553/">public request for an ASC spreadsheet</a> covering charges, payments, refunds, contractual adjustments, and collection percentages. The requester does not endorse this product.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <p>© 2026 FirstPass · ASC Monthly Collections Workbook · Aggregate operational reporting only</p>
+  </footer>
+</body>
+</html>

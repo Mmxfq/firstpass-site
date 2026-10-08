@@ -1,0 +1,62 @@
+name: Request the $39 ASC Collections Workbook
+description: Confirm availability and receive private payment and delivery instructions. No payment is due yet.
+title: "ASC workbook request: "
+labels:
+  - product-order
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This request is public. Do not include patient information, PHI, payment details, private financial data, passwords, customer data, or an email address.
+        FirstPass will confirm availability and provide private payment and delivery instructions before any payment is due.
+
+  - type: dropdown
+    id: role
+    attributes:
+      label: Intended user
+      options:
+        - ASC administrator
+        - Revenue-cycle manager
+        - Finance or operations manager
+        - Billing-company operator
+        - Consultant
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: format
+    attributes:
+      label: Primary spreadsheet application
+      options:
+        - Microsoft Excel
+        - Google Sheets
+        - Both
+    validations:
+      required: true
+
+  - type: dropdown
+    id: reporting
+    attributes:
+      label: Reporting cadence
+      options:
+        - Monthly
+        - Monthly with quarterly review
+        - Monthly with annual review
+        - Still deciding
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Purchase confirmation
+      options:
+        - label: I understand this is a $39 aggregate operational-reporting workbook, not billing, accounting, compliance, reimbursement, coding, legal, or financial advice.
+          required: true
+        - label: I will not enter patient-level information or PHI in the workbook.
+          required: true
+        - label: I understand delivery begins only after availability is confirmed and payment has cleared.
+          required: true
+        - label: I will not redistribute, resell, or publish the workbook itself.
+          required: true
