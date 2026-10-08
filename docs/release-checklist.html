@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A free private eight-point release-readiness checklist for CLIs and developer tools. Check registry, install, help, first-run, errors, requirements, and CI coverage.">
+  <link rel="canonical" href="https://mmxfq.github.io/firstpass-site/release-checklist.html">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <title>Free Developer Tool Release Checklist — FirstPass</title>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Developer Tool Release Checklist",
+      "url": "https://mmxfq.github.io/firstpass-site/release-checklist.html",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Any",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+  </script>
+  <style>
+    :root {
+      --ink: #17211b;
+      --muted: #5b665f;
+      --paper: #f5f1e8;
+      --card: #fffdf8;
+      --line: #d8d2c5;
+      --accent: #1e6848;
+      --warm: #e8bb62;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: radial-gradient(circle at 90% 5%, rgba(232,187,98,.25), transparent 28rem), var(--paper);
+      font: 17px/1.55 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; }
+    .wrap { width: min(820px, calc(100% - 34px)); margin: auto; }
+    nav { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 25px 0; font-weight: 800; }
+    nav a { text-decoration: none; }
+    header { padding: 52px 0 38px; }
+    .eyebrow { color: var(--accent); font-size: .78rem; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
+    h1 { margin: 10px 0 18px; font: 500 clamp(2.8rem, 8vw, 5.2rem)/1 Georgia, serif; letter-spacing: -.05em; }
+    .lead { max-width: 700px; color: var(--muted); font-size: 1.15rem; }
+    .privacy { padding: 13px 16px; border-left: 4px solid var(--warm); background: var(--card); }
+    form { margin: 34px 0 70px; }
+    fieldset { margin: 0 0 15px; padding: 21px; border: 1px solid var(--line); border-radius: 15px; background: rgba(255,253,248,.86); }
+    legend { padding: 0 8px; font-weight: 820; }
+    .hint { margin: 0 0 14px; color: var(--muted); font-size: .94rem; }
+    .choices { display: flex; flex-wrap: wrap; gap: 10px; }
+    label { display: inline-flex; gap: 7px; align-items: center; padding: 8px 12px; border: 1px solid var(--line); border-radius: 999px; cursor: pointer; }
+    label:has(input:checked) { border-color: var(--accent); background: #e7f0ea; }
+    button, .button {
+      display: inline-block;
+      padding: 13px 20px;
+      border: 1px solid var(--ink);
+      border-radius: 999px;
+      background: var(--accent);
+      color: white;
+      font: inherit;
+      font-weight: 850;
+      text-decoration: none;
+      box-shadow: 4px 4px 0 var(--ink);
+      cursor: pointer;
+    }
+    #result { display: none; margin: 28px 0 0; padding: 25px; border: 1px solid var(--ink); border-radius: 18px; background: var(--card); box-shadow: 7px 7px 0 var(--warm); }
+    #score { margin: 5px 0; font: 500 3.5rem/1 Georgia, serif; }
+    #next { padding-left: 20px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+    .button.secondary { background: transparent; color: var(--ink); box-shadow: none; }
+    .fine-print { margin: 13px 0 0; color: var(--muted); font-size: .82rem; }
+    footer { padding: 35px 0 60px; color: var(--muted); border-top: 1px solid var(--line); }
+  </style>
+</head>
+<body>
+  <nav class="wrap"><a href="./">FirstPass</a><span>Free release self-check</span></nav>
+  <header class="wrap">
+    <div class="eyebrow">Two minutes · eight checks</div>
+    <h1>Can a stranger run your first command?</h1>
+    <p class="lead">Score the public path from package discovery to the first useful result. Answer from a clean user's point of view—not from a maintainer checkout that already has the right tools and context.</p>
+    <p class="privacy"><strong>Private by design:</strong> this checklist runs entirely in the browser. Answers are not sent or stored.</p>
+  </header>
+
+  <main class="wrap">
+    <form id="audit">
+      <fieldset data-title="Publish the named artifact">
+        <legend>1. Does the named package or release resolve publicly?</legend>
+        <p class="hint">Run the registry lookup or open the release URL while logged out.</p>
+        <div class="choices"><label><input required type="radio" name="q1" value="0"> No</label><label><input type="radio" name="q1" value="1"> Partly</label><label><input type="radio" name="q1" value="2"> Yes</label></div>
+      </fieldset>
+      <fieldset data-title="Make the install command copy-exact">
+        <legend>2. Does the README show one exact install command?</legend>
+        <p class="hint">A new user should not have to combine steps from several sections.</p>
+        <div class="choices"><label><input required type="radio" name="q2" value="0"> No</label><label><input type="radio" name="q2" value="1"> Partly</label><label><input type="radio" name="q2" value="2"> Yes</label></div>
+      </fieldset>
+      <fieldset data-title="Test outside the repository">
+        <legend>3. Does installation work without a source checkout?</legend>
+        <p class="hint">Test from an empty directory with no project-local dependency fallback.</p>
+        <div class="choices"><label><input required type="radio" name="q3" value="0"> No</label><label><input type="radio" name="q3" value="1"> Partly</label><label><input type="radio" name="q3" value="2"> Yes</label></div>
+      </fieldset>
+      <fieldset data-title="Verify help and version output">
+        <legend>4. Do help and version commands exit cleanly?</legend>
+        <p class="hint">They should name the installed tool, public options, and actual version.</p>
+        <div class="choices"><label><input required type="radio" name="q4" value="0"> No</label><label><input type="radio" name="q4" value="1"> Partly</label><label><input type="radio" name="q4" value="2"> Yes</label></div>
+      </fieldset>
+      <fieldset data-title="Prove one useful result">
+        <legend>5. Does the first documented example produce its promised result?</legend>
+        <p class="hint">Check the output, saved file, network result, and process exit—not just terminal text.</p>
+        <div class="choices"><label><input required type="radio" name="q5" value="0"> No</label><label><input type="radio" name="q5" value="1"> Partly</label><label><input type="radio" name="q5" value="2"> Yes</label></div>
+      </fieldset>
+      <fieldset data-title="Make failures actionable">
+        <legend>6. Do common failures return a useful message and non-zero exit?</legend>
+        <p class="hint">Try a missing file, unreachable URL, invalid input, or absent credential.</p>
+        <div class="choices"><label><input required type="radio" name="q6" value="0"> No</label><label><input type="radio" name="q6" value="1"> Partly</label><label><input type="radio" name="q6" value="2"> Yes</label></div>
+      </fieldset>
+      <fieldset data-title="State supported environments">
+        <legend>7. Are runtime, platform, and credential requirements explicit?</legend>
+        <p class="hint">Name supported versions before the first command, including platform-only limitations.</p>
+        <div class="choices"><label><input required type="radio" name="q7" value="0"> No</label><label><input type="radio" name="q7" value="1"> Partly</label><label><input type="radio" name="q7" value="2"> Yes</label></div>
+      </fieldset>
+      <fieldset data-title="Test the public release path in CI">
+        <legend>8. Does CI test the published artifact as a user installs it?</legend>
+        <p class="hint">Source tests can all pass while a registry package is missing or an archive omits files.</p>
+        <div class="choices"><label><input required type="radio" name="q8" value="0"> No</label><label><input type="radio" name="q8" value="1"> Partly</label><label><input type="radio" name="q8" value="2"> Yes</label></div>
+      </fieldset>
+
+      <button type="submit">Calculate release readiness</button>
+      <section id="result" aria-live="polite">
+        <div class="eyebrow">Your self-check</div>
+        <p id="score"></p>
+        <p id="summary"></p>
+        <strong>Fix these first:</strong>
+        <ol id="next"></ol>
+        <div class="actions">
+          <a class="button" href="https://github.com/Mmxfq/firstpass-site/issues/new?template=release-check-request.yml">Request the US$25 clean-environment check</a>
+          <a class="button secondary" href="release-check.html">See the full scope</a>
+        </div>
+        <p class="fine-print">The paid route begins with a public GitHub intake. No payment is collected until the release path and platform are confirmed.</p>
+      </section>
+    </form>
+  </main>
+
+  <footer><div class="wrap">This is a directional self-check, not security testing or formal compatibility certification.</div></footer>
+  <script>
+    document.getElementById("audit").addEventListener("submit", function (event) {
+      event.preventDefault();
+      const scored = [...this.querySelectorAll("fieldset")].map((field) => ({
+        title: field.dataset.title,
+        value: Number(field.querySelector("input:checked").value)
+      }));
+      const total = scored.reduce((sum, item) => sum + item.value, 0);
+      const summary = total >= 14
+        ? "The public first-run path is unusually complete. Recheck it from a clean machine before every release."
+        : total >= 9
+          ? "The release is discoverable, but one or more gaps can still break a new user's first useful run."
+          : "The source may work while the public release path does not. Fix discovery, installation, and one exact proof command before promoting it.";
+      document.getElementById("score").textContent = total + " / 16";
+      document.getElementById("summary").textContent = summary;
+      document.getElementById("next").innerHTML = scored
+        .sort((a, b) => a.value - b.value)
+        .slice(0, 3)
+        .map((item) => "<li>" + item.title + "</li>")
+        .join("");
+      const result = document.getElementById("result");
+      result.style.display = "block";
+      result.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  </script>
+</body>
+</html>

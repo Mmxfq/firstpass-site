@@ -31,6 +31,7 @@ report includes registry/release discovery, 5+ cited findings or verified passes
 reproduction details, and command-level acceptance checks.
 
 [View the release-check scope](https://mmxfq.github.io/firstpass-site/release-check.html) ·
+[Run the free release checklist](https://mmxfq.github.io/firstpass-site/release-checklist.html) ·
 [Request a release check](https://github.com/Mmxfq/firstpass-site/issues/new?template=release-check-request.yml) ·
 [Read a public example](https://github.com/6t9xstar/one-step-seo/issues/1)
 
@@ -38,6 +39,7 @@ reproduction details, and command-level acceptance checks.
 
 - `docs/index.html` — public sales page
 - `docs/release-check.html` — public developer-tool release-check offer
+- `docs/release-checklist.html` — private-in-browser release-readiness self-check
 - `offer.md` — scope, qualification, and fulfillment workflow
 - `report-template.md` — paid-report structure
 - `outreach.md` — personalized outreach guidelines

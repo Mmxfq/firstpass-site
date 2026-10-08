@@ -13,6 +13,7 @@ Public Tolerable Workplace trust-path teardown: https://mmxfq.github.io/firstpas
 Public Futex activation-path teardown: https://mmxfq.github.io/firstpass-site/futex-mini-teardown.html
 DIY product: SaaS Hero Rewrite Kit, US$9: https://mmxfq.github.io/firstpass-site/hero-kit.html
 Developer tool release check, US$25: https://mmxfq.github.io/firstpass-site/release-check.html
+Free developer tool release checklist: https://mmxfq.github.io/firstpass-site/release-checklist.html
 Free SaaS Hero Brief Builder: https://mmxfq.github.io/firstpass-site/hero-brief.html
 Free Hero Rewrite Kit sample: https://mmxfq.github.io/firstpass-site/hero-kit-sample.txt
 Order inquiry: https://github.com/Mmxfq/firstpass-site/issues/new?template=order-request.yml
