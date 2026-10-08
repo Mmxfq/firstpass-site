@@ -1,0 +1,62 @@
+name: Request Commercial Cleaning Bid Calculator
+description: Confirm availability for the US$29 workbook. No payment is due yet.
+title: "Commercial Cleaning Bid Calculator request: "
+labels:
+  - order-request
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This public issue is only for license and delivery coordination.
+        Do not include customer names, site addresses, contracts, employee data, financial records, payment details, email addresses, or attachments.
+
+  - type: dropdown
+    id: role
+    attributes:
+      label: Primary role
+      options:
+        - Cleaning business owner
+        - Operations or estimating
+        - Cleaning consultant
+        - Another commercial cleaning role
+    validations:
+      required: true
+
+  - type: dropdown
+    id: application
+    attributes:
+      label: Spreadsheet application
+      options:
+        - Microsoft Excel for Windows
+        - Microsoft Excel for Mac
+        - Excel for the web
+        - Another spreadsheet application
+    validations:
+      required: true
+
+  - type: dropdown
+    id: use
+    attributes:
+      label: Primary use
+      options:
+        - Price a new recurring contract
+        - Review an existing contract
+        - Standardize quoting assumptions
+        - Compare estimated and actual labor
+        - Another quoting use
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Confirmation
+      options:
+        - label: I have not included customer names, addresses, contracts, employee data, financial records, payment details, an email address, or attachments.
+          required: true
+        - label: I understand delivery begins after availability is confirmed and payment has cleared.
+          required: true
+        - label: I understand the license does not permit resale, redistribution, sublicensing, or publishing the workbook.
+          required: true
+        - label: I understand this is a quoting aid, not payroll, tax, accounting, insurance, employment, contract, or legal advice, and it does not guarantee profitability.
+          required: true

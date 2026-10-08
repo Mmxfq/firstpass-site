@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A ready-to-use US$29 Excel calculator for commercial cleaning labor hours, monthly operating cost, required price, revenue per labor hour, and bid margin.">
+  <link rel="canonical" href="https://mmxfq.github.io/firstpass-site/commercial-cleaning-bid-calculator.html">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="Commercial Cleaning Bid & Margin Calculator — FirstPass">
+  <meta property="og:description" content="Turn site size, production rate, labor, frequency, supplies, travel, overhead, and target margin into a traceable recurring-service price.">
+  <meta property="og:url" content="https://mmxfq.github.io/firstpass-site/commercial-cleaning-bid-calculator.html">
+  <title>Commercial Cleaning Bid & Margin Calculator — FirstPass</title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "FirstPass Commercial Cleaning Bid & Margin Calculator",
+    "description": "A macro-free Excel workbook for commercial cleaning quote assumptions, required price, and margin checks.",
+    "brand": {"@type": "Brand", "name": "FirstPass"},
+    "offers": {"@type": "Offer", "price": "29", "priceCurrency": "USD", "availability": "https://schema.org/InStock"}
+  }
+  </script>
+  <style>
+    :root { --ink:#17211b; --muted:#58645d; --paper:#f5f1e8; --card:#fffdf8; --line:#d8d2c5; --accent:#1e6848; --accent-dark:#124832; --warm:#e8bb62; --danger:#8f2d22; }
+    * { box-sizing: border-box; }
+    body { margin:0; color:var(--ink); background:radial-gradient(circle at 88% 4%,rgba(232,187,98,.28),transparent 27rem),var(--paper); font:17px/1.6 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    a { color:inherit; }
+    .wrap { width:min(1080px,calc(100% - 40px)); margin:auto; }
+    nav { display:flex; justify-content:space-between; align-items:center; padding:24px 0; font-weight:800; }
+    nav a { text-decoration:none; }
+    nav small,.muted,.fine { color:var(--muted); }
+    .hero { display:grid; grid-template-columns:1.2fr .8fr; gap:54px; align-items:center; padding:62px 0 84px; }
+    .eyebrow { color:var(--accent); font-size:.78rem; font-weight:850; letter-spacing:.13em; text-transform:uppercase; }
+    h1,h2 { font-family:Georgia,"Times New Roman",serif; font-weight:500; letter-spacing:-.045em; }
+    h1 { margin:12px 0 22px; font-size:clamp(3rem,6.5vw,5.8rem); line-height:.98; }
+    h2 { margin:0 0 14px; font-size:clamp(2rem,4vw,3.4rem); line-height:1.08; }
+    .lead { max-width:700px; color:var(--muted); font-size:1.18rem; }
+    .actions { display:flex; flex-wrap:wrap; gap:14px; align-items:center; margin-top:30px; }
+    .button { display:inline-block; padding:14px 21px; border:1px solid var(--ink); border-radius:999px; background:var(--accent); color:white; font-weight:800; text-decoration:none; box-shadow:4px 4px 0 var(--ink); }
+    .button:hover,.button:focus { background:var(--accent-dark); transform:translate(1px,1px); box-shadow:3px 3px 0 var(--ink); }
+    .price-card { padding:30px; border:1px solid var(--ink); border-radius:22px; background:var(--card); box-shadow:8px 8px 0 var(--warm); }
+    .price { margin:5px 0; font:500 4.4rem/1 Georgia,serif; }
+    .price-card ul { padding-left:20px; }
+    section { padding:76px 0; border-top:1px solid var(--line); }
+    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:32px; }
+    .card { padding:24px; border:1px solid var(--line); border-radius:16px; background:rgba(255,253,248,.82); }
+    .card strong { display:block; margin-bottom:8px; }
+    .number { display:block; color:var(--accent); font:500 2.2rem/1 Georgia,serif; }
+    .workbook { margin-top:32px; padding:20px; overflow-x:auto; border:1px solid var(--ink); border-radius:18px; background:var(--card); box-shadow:6px 6px 0 var(--warm); }
+    table { width:100%; min-width:780px; border-collapse:collapse; font-size:.9rem; }
+    th,td { padding:12px; border:1px solid var(--line); text-align:right; }
+    th { background:var(--ink); color:white; text-align:center; }
+    td:first-child { text-align:left; }
+    td.input { background:#fff3d7; }
+    td.formula { background:#e1f0e8; }
+    .flag { color:var(--danger); font-weight:800; }
+    .proof { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; margin-top:30px; padding:1px; border:1px solid var(--line); border-radius:16px; overflow:hidden; background:var(--line); }
+    .proof div { padding:20px; background:var(--card); }
+    .proof strong { display:block; color:var(--accent); }
+    code { overflow-wrap:anywhere; }
+    .fine { font-size:.88rem; }
+    footer { padding:40px 0 70px; color:var(--muted); }
+    @media (max-width:760px) { .hero { grid-template-columns:1fr; gap:34px; padding:42px 0 66px; } .grid { grid-template-columns:1fr; } .proof { grid-template-columns:1fr 1fr; } nav small { display:none; } }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <nav><a href="./">FirstPass</a><small>Commercial cleaning quote assumptions you can inspect.</small></nav>
+    <div class="hero">
+      <div>
+        <div class="eyebrow">For owner-led commercial cleaning companies</div>
+        <h1>Know the price before the contract knows your mistake.</h1>
+        <p class="lead">Turn cleanable area, production rate, crew, frequency, loaded labor cost, supplies, travel, overhead, and target margin into a traceable recurring-service price.</p>
+        <div class="actions">
+          <a class="button" href="https://github.com/Mmxfq/firstpass-site/issues/new?template=cleaning-bid-calculator-order.yml">Request the US$29 workbook</a>
+          <a href="#preview">See the synthetic calculation</a>
+        </div>
+      </div>
+      <aside class="price-card" aria-label="Workbook details">
+        <div class="eyebrow">Ready-to-deliver v1.0</div>
+        <div class="price">US$29</div>
+        <small>One-time purchase. Macro-free Excel .xlsx file.</small>
+        <ul>
+          <li>50 quote rows</li>
+          <li>16 manual input columns</li>
+          <li>10 formula-driven outputs</li>
+          <li>Required price and bid-margin flags</li>
+          <li>Dashboard and status chart</li>
+          <li>Data dictionary and control prompts</li>
+        </ul>
+      </aside>
+    </div>
+  </header>
+  <main>
+    <section>
+      <div class="wrap">
+        <div class="eyebrow">Quote from operating cost</div>
+        <h2>Make every assumption visible.</h2>
+        <div class="grid">
+          <div class="card"><span class="number">01</span><strong>Estimate labor</strong>Convert cleanable square feet and a validated production rate into labor hours and on-site crew time.</div>
+          <div class="card"><span class="number">02</span><strong>Load recurring cost</strong>Include labor, supplies, travel, allocated overhead, and scope-specific monthly costs.</div>
+          <div class="card"><span class="number">03</span><strong>Check the bid</strong>Compare the current proposal with the required monthly price, target margin, and revenue per labor hour.</div>
+        </div>
+      </div>
+    </section>
+    <section id="preview">
+      <div class="wrap">
+        <div class="eyebrow">Synthetic preview</div>
+        <h2>Catch a low bid before it becomes recurring work.</h2>
+        <p class="muted">This fictional 20,000-square-foot example assumes 2,500 square feet per labor hour, five weekly visits, US$28 loaded labor cost, and a 25% target margin.</p>
+        <div class="workbook" role="region" aria-label="Synthetic cleaning bid calculation" tabindex="0">
+          <table>
+            <thead><tr><th>Current bid</th><th>Labor hours / visit</th><th>Monthly visits</th><th>Operating cost</th><th>Required price</th><th>Bid margin</th><th>Result</th></tr></thead>
+            <tbody><tr><td class="input">US$7,000</td><td class="formula">8.00</td><td class="formula">21.67</td><td class="formula">US$6,436.67</td><td class="formula">US$8,582.22</td><td class="formula">8.0%</td><td class="formula flag">Below 25% target</td></tr></tbody>
+          </table>
+        </div>
+        <p class="fine">The result is only as reliable as the entered scope, production rate, loaded labor cost, and recurring costs. A margin is not the same as a markup.</p>
+      </div>
+    </section>
+    <section>
+      <div class="wrap">
+        <div class="eyebrow">Delivery proof</div>
+        <h2>The workbook already exists.</h2>
+        <p class="lead">Version 1.0 was generated, reopened, fully recalculated in Microsoft Excel, and checked against three fictional quotes before publication.</p>
+        <div class="proof">
+          <div><strong>4 sheets</strong>Guide, log, dashboard, dictionary</div>
+          <div><strong>50 bids</strong>Formula and validation capacity</div>
+          <div><strong>26,679 bytes</strong>Macro-free .xlsx artifact</div>
+          <div><strong>Excel verified</strong>Prices, margins, and flags recalculated</div>
+        </div>
+        <p class="fine">Artifact SHA-256: <code>0f4a615e2936ac68bbccbe6ff3c5266a1ba00f1285641f324bf5f2fbd83faeb1</code></p>
+      </div>
+    </section>
+    <section>
+      <div class="wrap">
+        <div class="eyebrow">Boundaries</div>
+        <h2>A quoting aid, not a universal rate.</h2>
+        <div class="grid">
+          <div class="card"><strong>Walk the site</strong>Layout, soil level, task frequency, equipment, access, and quality standard materially change production.</div>
+          <div class="card"><strong>Supply the labor cost</strong>The workbook does not calculate wages, taxes, benefits, overtime, insurance, or worker classification.</div>
+          <div class="card"><strong>Validate the contract</strong>This is not payroll, tax, accounting, insurance, employment, contract, or legal advice. It does not define scope or guarantee profitability.</div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="wrap">
+        <div class="eyebrow">Order</div>
+        <h2>Request the ready-to-deliver calculator.</h2>
+        <p class="lead">The public request asks only about role, spreadsheet application, and intended use. Do not include customer names, addresses, contracts, employee data, financial records, payment information, attachments, or an email address.</p>
+        <div class="actions"><a class="button" href="https://github.com/Mmxfq/firstpass-site/issues/new?template=cleaning-bid-calculator-order.yml">Request it for US$29</a></div>
+        <p class="fine">Availability and private payment and delivery instructions are confirmed before payment is due. Delivery begins only after cleared payment. No resale, redistribution, sublicensing, or publishing.</p>
+        <p class="fine">Built in response to public operator demand for a commercial-contract formula that exposes underpricing before months of recurring work. The cited operators do not endorse this product.</p>
+      </div>
+    </section>
+  </main>
+  <footer class="wrap">© 2026 FirstPass · Commercial Cleaning Bid & Margin Calculator · Quoting aid only</footer>
+</body>
+</html>

@@ -16,6 +16,7 @@ Developer tool release check, US$25: https://mmxfq.github.io/firstpass-site/rele
 Free developer tool release checklist: https://mmxfq.github.io/firstpass-site/release-checklist.html
 Free SaaS Hero Brief Builder: https://mmxfq.github.io/firstpass-site/hero-brief.html
 Agent Artifact Sanitizer, US$29 individual or US$49 agency, with free pasted-text demo: https://mmxfq.github.io/firstpass-site/agent-secret-check.html
+Commercial Cleaning Bid & Margin Calculator, US$29: https://mmxfq.github.io/firstpass-site/commercial-cleaning-bid-calculator.html
 Change Order Exposure Tracker, US$29: https://mmxfq.github.io/firstpass-site/change-order-exposure-tracker.html
 ASC Monthly Collections Workbook, US$39: https://mmxfq.github.io/firstpass-site/asc-collections-workbook.html
 Custom browser lead magnet sprint, US$99: https://mmxfq.github.io/firstpass-site/browser-tool-sprint.html
@@ -63,6 +64,18 @@ Order inquiry: https://github.com/Mmxfq/firstpass-site/issues/new?template=order
 - Exclusions: penetration testing, credential validation, private configuration, compliance certification, or implementation.
 - Public market signal: https://github.com/panelalpha/panelalpha-engine/issues/27
 - Order inquiry: https://github.com/Mmxfq/firstpass-site/issues/new?template=agent-credential-request.yml
+
+## Commercial Cleaning Bid & Margin Calculator
+
+- Price: US$29 one-time.
+- Delivery: a ready-to-deliver, macro-free Excel .xlsx workbook after availability confirmation and cleared payment.
+- Intended users: owner-led commercial cleaning businesses, estimators, operations teams, and cleaning consultants.
+- Scope: 50 quote rows with 16 manual inputs and 10 formula-driven outputs.
+- Calculations: labor and on-site hours per visit, monthly visits, direct cost, monthly operating cost, required monthly and per-visit price, revenue per labor hour, bid margin, and margin flag.
+- Artifact proof: version 1.0 is 26,679 bytes; SHA-256 0f4a615e2936ac68bbccbe6ff3c5266a1ba00f1285641f324bf5f2fbd83faeb1; three synthetic quotes and dashboard totals were fully recalculated in Microsoft Excel.
+- Boundaries: quoting aid only—not payroll, tax, accounting, insurance, employment, contract, or legal advice. It does not define scope or guarantee profitability.
+- Product page: https://mmxfq.github.io/firstpass-site/commercial-cleaning-bid-calculator.html
+- Order inquiry: https://github.com/Mmxfq/firstpass-site/issues/new?template=cleaning-bid-calculator-order.yml
 
 ## Change Order Exposure Tracker
 
