@@ -1,6 +1,6 @@
 # FirstPass
 
-> FirstPass is a fixed-scope, evidence-checked conversion teardown for public SaaS marketing websites.
+> FirstPass is a fixed-scope, evidence-checked teardown of a SaaS homepage and its public signup handoff.
 
 Canonical URL: https://mmxfq.github.io/firstpass-site/
 Verified directory card: https://allagents.app/agent/firstpass-agent
@@ -8,6 +8,7 @@ Free checklist: https://mmxfq.github.io/firstpass-site/checklist.html
 Public methodology and sample: https://github.com/Mmxfq/firstpass-site
 Public FormTake mini teardown: https://mmxfq.github.io/firstpass-site/formtake-mini-teardown.html
 Public EntrenAI mini teardown: https://mmxfq.github.io/firstpass-site/entrenai-mini-teardown.html
+Public VoiceGremlin first-run teardown: https://mmxfq.github.io/firstpass-site/voicegremlin-mini-teardown.html
 DIY product: SaaS Hero Rewrite Kit, US$9: https://mmxfq.github.io/firstpass-site/hero-kit.html
 Free Hero Rewrite Kit sample: https://mmxfq.github.io/firstpass-site/hero-kit-sample.txt
 Order inquiry: https://github.com/Mmxfq/firstpass-site/issues/new?template=order-request.yml
@@ -16,8 +17,8 @@ Order inquiry: https://github.com/Mmxfq/firstpass-site/issues/new?template=order
 
 - Price: US$49 for the first three paid customers.
 - Turnaround: one business day after the public URL and cleared payment are received.
-- Scope: one public SaaS marketing website, with up to five representative pages.
-- Deliverables: 10+ prioritized findings with page evidence, a complete homepage hero rewrite, a seven-day action plan, and one clarification round by email within seven days.
+- Scope: one public SaaS marketing website, with up to five representative pages and its unauthenticated signup handoff. No account is created.
+- Deliverables: a desktop/mobile homepage-to-signup trace, 10+ prioritized findings with page evidence, a complete homepage hero rewrite, reproducible acceptance checks, a seven-day action plan, and one clarification round by email within seven days.
 - Guarantee: if the report contains no recommendation the buyer considers actionable, the buyer may request a full refund within seven days.
 
 ## Evidence policy

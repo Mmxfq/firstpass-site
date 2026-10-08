@@ -7,22 +7,26 @@ conversion action plan that the founder can implement without another meeting.
 
 ## Founding-client package — US$49
 
-The customer supplies one public website URL. The delivery includes:
+The customer supplies one public website URL. FirstPass traces the homepage
+through its unauthenticated signup handoff without creating an account. The
+delivery includes:
 
 1. An executive summary naming the three highest-impact conversion blockers.
 2. Ten or more findings, each with page evidence, severity, rationale, and a
    specific recommended change.
 3. A complete rewrite of the homepage hero: eyebrow, headline, subheadline,
    primary CTA, and trust line.
-4. A review of message clarity, CTA flow, trust, objection handling, mobile
+4. A desktop and mobile trace from the homepage to the public signup state.
+5. A review of message clarity, CTA flow, trust, objection handling, mobile
    usability, basic accessibility, and basic technical performance.
-5. A seven-day action plan ordered by impact and effort.
-6. One clarification round by email within seven days.
+6. Reproducible acceptance checks for each priority change.
+7. A seven-day action plan ordered by impact and effort.
+8. One clarification round by email within seven days.
 
 Turnaround begins when the URL and payment are received. Scope is one public
-marketing website with up to five representative pages; authenticated product
-flows, legal compliance certification, implementation, and analytics setup are
-not included.
+marketing website with up to five representative pages plus its unauthenticated
+signup handoff; account creation, authenticated product flows, legal compliance
+certification, implementation, and analytics setup are not included.
 
 ## Honest guarantee
 
