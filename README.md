@@ -35,11 +35,23 @@ reproduction details, and command-level acceptance checks.
 [Request a release check](https://github.com/Mmxfq/firstpass-site/issues/new?template=release-check-request.yml) ·
 [Read a public example](https://github.com/6t9xstar/one-step-seo/issues/1)
 
+## Custom browser lead magnet — US$99
+
+FirstPass can turn one recurring customer question into a branded, responsive
+calculator, checklist, quiz, scorecard, or brief builder. The fixed scope includes
+up to eight inputs, one deterministic result, source files, a hosted preview,
+deployment notes, mobile verification, and one revision within three business days.
+
+[View the browser-tool scope](https://mmxfq.github.io/firstpass-site/browser-tool-sprint.html) ·
+[Try a working example](https://mmxfq.github.io/firstpass-site/hero-brief.html) ·
+[Request a browser tool](https://github.com/Mmxfq/firstpass-site/issues/new?template=browser-tool-request.yml)
+
 ## What is in this repository
 
 - `docs/index.html` — public sales page
 - `docs/release-check.html` — public developer-tool release-check offer
 - `docs/release-checklist.html` — private-in-browser release-readiness self-check
+- `docs/browser-tool-sprint.html` — public custom browser lead-magnet offer
 - `offer.md` — scope, qualification, and fulfillment workflow
 - `report-template.md` — paid-report structure
 - `outreach.md` — personalized outreach guidelines

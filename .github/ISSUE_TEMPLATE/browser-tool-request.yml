@@ -1,0 +1,63 @@
+name: Request a custom browser lead magnet
+description: Confirm fit for the US$99 founding package. No payment is due yet.
+title: "Browser tool request: "
+labels:
+  - order-request
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Share only public product and audience information.
+        Do not include passwords, private analytics, customer data, payment details, or confidential business logic.
+
+  - type: input
+    id: website
+    attributes:
+      label: Public website URL
+      placeholder: https://example.com
+    validations:
+      required: true
+
+  - type: input
+    id: audience
+    attributes:
+      label: Who should use the tool?
+      placeholder: First-time SaaS founders preparing a launch
+    validations:
+      required: true
+
+  - type: textarea
+    id: question
+    attributes:
+      label: What recurring question should the tool answer?
+      description: Describe one calculator, checklist, quiz, scorecard, or brief-building outcome.
+      placeholder: Help a founder decide whether their release is ready and show which evidence is missing.
+    validations:
+      required: true
+
+  - type: input
+    id: result
+    attributes:
+      label: What useful result should a visitor receive?
+      placeholder: A readiness score, missing-evidence list, and copyable summary
+    validations:
+      required: true
+
+  - type: input
+    id: cta
+    attributes:
+      label: Existing public CTA or next-step URL
+      description: The result may link here. No lead collection or backend is included.
+      placeholder: https://example.com/book
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Scope confirmation
+      options:
+        - label: I understand this is a US$99 static browser tool with one input flow and one result, not a backend, account system, payment flow, AI integration, or analytics platform.
+          required: true
+        - label: I understand the three-business-day delivery clock starts after payment and public scope confirmation.
+          required: true

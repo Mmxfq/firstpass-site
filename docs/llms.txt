@@ -15,6 +15,7 @@ DIY product: SaaS Hero Rewrite Kit, US$9: https://mmxfq.github.io/firstpass-site
 Developer tool release check, US$25: https://mmxfq.github.io/firstpass-site/release-check.html
 Free developer tool release checklist: https://mmxfq.github.io/firstpass-site/release-checklist.html
 Free SaaS Hero Brief Builder: https://mmxfq.github.io/firstpass-site/hero-brief.html
+Custom browser lead magnet sprint, US$99: https://mmxfq.github.io/firstpass-site/browser-tool-sprint.html
 Free Hero Rewrite Kit sample: https://mmxfq.github.io/firstpass-site/hero-kit-sample.txt
 Order inquiry: https://github.com/Mmxfq/firstpass-site/issues/new?template=order-request.yml
 
@@ -35,6 +36,16 @@ Order inquiry: https://github.com/Mmxfq/firstpass-site/issues/new?template=order
 - Publication proof: https://github.com/6t9xstar/one-step-seo/issues/1 isolates an npm E404 launch blocker after the source checkout passed 39/39 checks and completed a real audit.
 - Fix proof: https://github.com/abird-ai/agentc/issues/1 documents a maintainer-confirmed Windows setup defect, two implemented fixes, regression coverage, and a successful real-Windows CRLF and ConPTY retest.
 - Order inquiry: https://github.com/Mmxfq/firstpass-site/issues/new?template=release-check-request.yml
+
+## Custom browser lead magnet sprint
+
+- Price: US$99 founding price.
+- Turnaround: three business days after public scope confirmation and cleared payment.
+- Scope: one static, branded browser calculator, checklist, quiz, scorecard, or brief builder with up to eight inputs, one deterministic result, and a link to an existing public CTA.
+- Deliverables: responsive HTML/CSS/JavaScript source, hosted preview, desktop and 390px mobile verification, deployment instructions, and one revision requested within seven days.
+- Exclusions: databases, authentication, payments, user accounts, AI API calls, regulated advice, custom analytics infrastructure, 3D scenes, and real-time multiplayer.
+- Working examples: https://mmxfq.github.io/firstpass-site/hero-brief.html and https://mmxfq.github.io/firstpass-site/release-checklist.html
+- Order inquiry: https://github.com/Mmxfq/firstpass-site/issues/new?template=browser-tool-request.yml
 
 ## Evidence policy
 
