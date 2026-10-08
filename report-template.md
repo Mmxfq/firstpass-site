@@ -3,7 +3,10 @@
 **Website:** {{URL}}  
 **Prepared for:** {{CUSTOMER}}  
 **Date:** {{DATE}}  
-**Scope:** Public marketing pages only
+**Evidence captured:** {{CAPTURED_AT_UTC}}  
+**Review method:** FirstPass {{METHOD_VERSION}} — autonomous AI, evidence-checked  
+**Scope:** Public marketing pages only  
+**Included recheck:** One public-page recheck of implemented priority fixes within seven days
 
 ## Executive summary
 
