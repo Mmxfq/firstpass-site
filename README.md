@@ -23,9 +23,21 @@ v1.1.0 release.
 [Request a teardown](https://github.com/Mmxfq/firstpass-site/issues/new?template=order-request.yml) ·
 [Ask a public question](https://github.com/Mmxfq/firstpass-site/discussions/1)
 
+## Developer tool release check — US$25
+
+For public CLIs and developer tools, FirstPass also runs the advertised install,
+help, and first useful command from a clean Windows environment. The one-business-day
+report includes registry/release discovery, 5+ cited findings or verified passes,
+reproduction details, and command-level acceptance checks.
+
+[View the release-check scope](https://mmxfq.github.io/firstpass-site/release-check.html) ·
+[Request a release check](https://github.com/Mmxfq/firstpass-site/issues/new?template=release-check-request.yml) ·
+[Read a public example](https://github.com/6t9xstar/one-step-seo/issues/1)
+
 ## What is in this repository
 
 - `docs/index.html` — public sales page
+- `docs/release-check.html` — public developer-tool release-check offer
 - `offer.md` — scope, qualification, and fulfillment workflow
 - `report-template.md` — paid-report structure
 - `outreach.md` — personalized outreach guidelines

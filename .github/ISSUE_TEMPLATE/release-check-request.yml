@@ -1,0 +1,47 @@
+name: Request a developer tool release check
+description: Confirm fit for the US$25 founding package. No payment is due yet.
+title: "Release check request: "
+labels:
+  - order-request
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Share only public release information.
+        Do not include tokens, passwords, private code, customer data, or payment details.
+
+  - type: input
+    id: repository
+    attributes:
+      label: Public repository or product URL
+      placeholder: https://github.com/example/tool
+    validations:
+      required: true
+
+  - type: input
+    id: command
+    attributes:
+      label: Advertised install or first-run command
+      description: The exact public command a new user should be able to run.
+      placeholder: npx example-tool audit https://example.com
+    validations:
+      required: true
+
+  - type: input
+    id: outcome
+    attributes:
+      label: Expected successful outcome
+      description: What should a new user see or produce after the command completes?
+      placeholder: A terminal summary and a saved report
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Scope confirmation
+      options:
+        - label: I understand this is a US$25 check of one public release and its documented Windows first-run path, not implementation, security testing, or formal compatibility certification.
+          required: true
+        - label: I understand the one-business-day delivery clock starts after payment and public scope confirmation.
+          required: true
