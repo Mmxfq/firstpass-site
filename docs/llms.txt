@@ -16,6 +16,7 @@ Developer tool release check, US$25: https://mmxfq.github.io/firstpass-site/rele
 Free developer tool release checklist: https://mmxfq.github.io/firstpass-site/release-checklist.html
 Free SaaS Hero Brief Builder: https://mmxfq.github.io/firstpass-site/hero-brief.html
 Agent Artifact Sanitizer, US$29 individual or US$49 agency, with free pasted-text demo: https://mmxfq.github.io/firstpass-site/agent-secret-check.html
+Change Order Exposure Tracker, US$29: https://mmxfq.github.io/firstpass-site/change-order-exposure-tracker.html
 ASC Monthly Collections Workbook, US$39: https://mmxfq.github.io/firstpass-site/asc-collections-workbook.html
 Custom browser lead magnet sprint, US$99: https://mmxfq.github.io/firstpass-site/browser-tool-sprint.html
 Free Hero Rewrite Kit sample: https://mmxfq.github.io/firstpass-site/hero-kit-sample.txt
@@ -62,6 +63,19 @@ Order inquiry: https://github.com/Mmxfq/firstpass-site/issues/new?template=order
 - Exclusions: penetration testing, credential validation, private configuration, compliance certification, or implementation.
 - Public market signal: https://github.com/panelalpha/panelalpha-engine/issues/27
 - Order inquiry: https://github.com/Mmxfq/firstpass-site/issues/new?template=agent-credential-request.yml
+
+## Change Order Exposure Tracker
+
+- Price: US$29 one-time.
+- Delivery: a ready-to-deliver, macro-free Excel .xlsx workbook after availability confirmation and cleared payment.
+- Intended users: contractors, subcontractors, project managers, operations teams, finance teams, and construction consultants.
+- Scope: 100 change-order rows with 19 manual input columns and seven formula-driven columns.
+- Calculations: age, decision-pending days, unapproved exposure, approved-not-billed, billed-not-paid, expected final impact, and exception flags.
+- Included sheets: START HERE, Change Order Log, Dashboard, and Data Dictionary.
+- Artifact proof: version 1.0 is 43,685 bytes; SHA-256 8753af524204201d5d3bfc3e161ecda6459d02983b3035b4c5b4308f0ad3a0a1; five synthetic rows and dashboard totals were fully recalculated in Microsoft Excel.
+- Boundaries: operational tracking only—not a contract, billing, accounting, tax, legal, or financial system or advisory service. Reconcile to authoritative project and accounting records.
+- Product page: https://mmxfq.github.io/firstpass-site/change-order-exposure-tracker.html
+- Order inquiry: https://github.com/Mmxfq/firstpass-site/issues/new?template=change-order-tracker-order.yml
 
 ## ASC Monthly Collections Workbook
 

@@ -1,0 +1,63 @@
+name: Request Change Order Exposure Tracker
+description: Confirm availability for the US$29 workbook. No payment is due yet.
+title: "Change Order Exposure Tracker request: "
+labels:
+  - order-request
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This public issue is only for license and delivery coordination.
+        Do not include project names, customer or employee data, contracts, financial records, banking or payment details, email addresses, or attachments.
+
+  - type: dropdown
+    id: role
+    attributes:
+      label: Primary role
+      options:
+        - Contractor or subcontractor
+        - Project manager
+        - Operations or finance
+        - Construction consultant
+        - Another project-delivery role
+    validations:
+      required: true
+
+  - type: dropdown
+    id: application
+    attributes:
+      label: Spreadsheet application
+      options:
+        - Microsoft Excel for Windows
+        - Microsoft Excel for Mac
+        - Excel for the web
+        - Another spreadsheet application
+    validations:
+      required: true
+
+  - type: dropdown
+    id: use
+    attributes:
+      label: Primary use
+      options:
+        - Pending change and exposure tracking
+        - Approval and billing-gap tracking
+        - Payment follow-up
+        - Project closeout
+        - Another operational tracking use
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Confirmation
+      options:
+        - label: I have not included project names, customer or employee data, contracts, financial records, payment details, an email address, or attachments.
+          required: true
+        - label: I understand delivery begins after availability is confirmed and payment has cleared.
+          required: true
+        - label: I understand the license does not permit resale, redistribution, sublicensing, or publishing the workbook.
+          required: true
+        - label: I understand this is an operational aid, not a contract, billing, accounting, tax, legal, or financial system or advisory service.
+          required: true

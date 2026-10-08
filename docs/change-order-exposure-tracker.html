@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A ready-to-use US$29 Excel tracker for pending change-order exposure, approvals, billing gaps, payment gaps, next actions, and exception flags.">
+  <link rel="canonical" href="https://mmxfq.github.io/firstpass-site/change-order-exposure-tracker.html">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="Change Order Exposure Tracker — FirstPass">
+  <meta property="og:description" content="Keep pending, approved, billed, and paid change-order amounts in one formula-driven Excel log and dashboard.">
+  <meta property="og:url" content="https://mmxfq.github.io/firstpass-site/change-order-exposure-tracker.html">
+  <title>Change Order Exposure Tracker — FirstPass</title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "FirstPass Change Order Exposure Tracker",
+    "description": "A macro-free Excel workbook for operational change-order exposure, approval, billing, payment, and exception tracking.",
+    "brand": {"@type": "Brand", "name": "FirstPass"},
+    "offers": {
+      "@type": "Offer",
+      "price": "29",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "url": "https://mmxfq.github.io/firstpass-site/change-order-exposure-tracker.html"
+    }
+  }
+  </script>
+  <style>
+    :root {
+      --ink: #17211b;
+      --muted: #58645d;
+      --paper: #f5f1e8;
+      --card: #fffdf8;
+      --line: #d8d2c5;
+      --accent: #1e6848;
+      --accent-dark: #124832;
+      --warm: #e8bb62;
+      --danger: #8f2d22;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 88% 4%, rgba(232,187,98,.28), transparent 27rem),
+        var(--paper);
+      font: 17px/1.6 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1080px, calc(100% - 40px)); margin: auto; }
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 24px 0; font-weight: 800; }
+    nav a { text-decoration: none; }
+    nav small, .muted, .fine { color: var(--muted); }
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 54px;
+      align-items: center;
+      padding: 62px 0 84px;
+    }
+    .eyebrow {
+      color: var(--accent);
+      font-size: .78rem;
+      font-weight: 850;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    h1, h2 { font-family: Georgia, "Times New Roman", serif; font-weight: 500; letter-spacing: -.045em; }
+    h1 { margin: 12px 0 22px; font-size: clamp(3rem, 6.5vw, 5.8rem); line-height: .98; }
+    h2 { margin: 0 0 14px; font-size: clamp(2rem, 4vw, 3.4rem); line-height: 1.08; }
+    .lead { max-width: 700px; color: var(--muted); font-size: 1.18rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin-top: 30px; }
+    .button {
+      display: inline-block;
+      padding: 14px 21px;
+      border: 1px solid var(--ink);
+      border-radius: 999px;
+      background: var(--accent);
+      color: white;
+      font-weight: 800;
+      text-decoration: none;
+      box-shadow: 4px 4px 0 var(--ink);
+    }
+    .button:hover, .button:focus { background: var(--accent-dark); transform: translate(1px, 1px); box-shadow: 3px 3px 0 var(--ink); }
+    .price-card {
+      padding: 30px;
+      border: 1px solid var(--ink);
+      border-radius: 22px;
+      background: var(--card);
+      box-shadow: 8px 8px 0 var(--warm);
+    }
+    .price { margin: 5px 0; font: 500 4.4rem/1 Georgia, serif; }
+    .price-card ul { padding-left: 20px; }
+    section { padding: 76px 0; border-top: 1px solid var(--line); }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 32px; }
+    .card { padding: 24px; border: 1px solid var(--line); border-radius: 16px; background: rgba(255,253,248,.82); }
+    .card strong { display: block; margin-bottom: 8px; }
+    .number { display: block; color: var(--accent); font: 500 2.2rem/1 Georgia, serif; }
+    .workbook {
+      margin-top: 32px;
+      padding: 20px;
+      overflow-x: auto;
+      border: 1px solid var(--ink);
+      border-radius: 18px;
+      background: var(--card);
+      box-shadow: 6px 6px 0 var(--warm);
+    }
+    table { width: 100%; min-width: 780px; border-collapse: collapse; font-size: .9rem; }
+    th, td { padding: 12px; border: 1px solid var(--line); text-align: right; }
+    th { background: var(--ink); color: white; text-align: center; }
+    td:first-child, td:nth-child(2) { text-align: left; }
+    td.input { background: #fff3d7; }
+    td.formula { background: #e1f0e8; }
+    .flag { color: var(--danger); font-weight: 800; }
+    code { overflow-wrap: anywhere; }
+    .proof {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      margin-top: 30px;
+      padding: 1px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--line);
+    }
+    .proof div { padding: 20px; background: var(--card); }
+    .proof strong { display: block; color: var(--accent); }
+    .fine { font-size: .88rem; }
+    footer { padding: 40px 0 70px; color: var(--muted); }
+    @media (max-width: 760px) {
+      .hero { grid-template-columns: 1fr; gap: 34px; padding: 42px 0 66px; }
+      .grid { grid-template-columns: 1fr; }
+      .proof { grid-template-columns: 1fr 1fr; }
+      nav small { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <nav>
+      <a href="./">FirstPass</a>
+      <small>Change exposure, approvals, billing, and payment in one view.</small>
+    </nav>
+    <div class="hero">
+      <div>
+        <div class="eyebrow">For contractors, project managers, and operations teams</div>
+        <h1>Know what is exposed before the month-end surprise.</h1>
+        <p class="lead">Track every proposed change from first estimate through decision, billing, and payment. The workbook keeps unresolved exposure, approved-but-unbilled amounts, unpaid billings, and the next action visible together.</p>
+        <div class="actions">
+          <a class="button" href="https://github.com/Mmxfq/firstpass-site/issues/new?template=change-order-tracker-order.yml">Request the US$29 workbook</a>
+          <a href="#preview">See the synthetic preview</a>
+        </div>
+      </div>
+      <aside class="price-card" aria-label="Workbook details">
+        <div class="eyebrow">Ready-to-deliver v1.0</div>
+        <div class="price">US$29</div>
+        <small>One-time purchase. Macro-free Excel .xlsx file.</small>
+        <ul>
+          <li>100 change-order rows</li>
+          <li>19 manual input columns</li>
+          <li>7 formula-driven columns</li>
+          <li>Dashboard and status chart</li>
+          <li>Four editable alert thresholds</li>
+          <li>Data dictionary and control prompts</li>
+        </ul>
+      </aside>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="wrap">
+        <div class="eyebrow">One operational control view</div>
+        <h2>Separate exposure from approval and cash.</h2>
+        <p class="lead">A single status or “change order total” hides where action is stuck. This workbook keeps the forecast, authorization, billing, and payment stages separate.</p>
+        <div class="grid">
+          <div class="card"><span class="number">01</span><strong>Log the change</strong>Record owner, dates, reference, estimate, current forecast, status, next action, and notes.</div>
+          <div class="card"><span class="number">02</span><strong>See the gaps</strong>Formulas calculate decision age, open exposure, approved-not-billed, billed-not-paid, and expected final impact.</div>
+          <div class="card"><span class="number">03</span><strong>Work exceptions</strong>Editable thresholds flag overdue decisions, large exposure, delayed billing, and unpaid billed amounts.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="preview">
+      <div class="wrap">
+        <div class="eyebrow">Synthetic preview</div>
+        <h2>Every total stays traceable to a row.</h2>
+        <p class="muted">The fictional examples below are included only to show the calculation path. Delete them before operational use.</p>
+        <div class="workbook" role="region" aria-label="Synthetic change order tracker preview" tabindex="0">
+          <table>
+            <thead>
+              <tr>
+                <th>CO ID</th>
+                <th>Status</th>
+                <th>Forecast</th>
+                <th>Approved</th>
+                <th>Billed</th>
+                <th>Unapproved exposure</th>
+                <th>Unbilled approved</th>
+                <th>Exception</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="input">PCO-001</td>
+                <td class="input">Submitted</td>
+                <td class="input">$9,200</td>
+                <td class="input">—</td>
+                <td class="input">—</td>
+                <td class="formula">$9,200</td>
+                <td class="formula">$0</td>
+                <td class="formula flag">Decision overdue</td>
+              </tr>
+              <tr>
+                <td class="input">PCO-002</td>
+                <td class="input">Approved</td>
+                <td class="input">$4,800</td>
+                <td class="input">$4,600</td>
+                <td class="input">$3,000</td>
+                <td class="formula">$0</td>
+                <td class="formula">$1,600</td>
+                <td class="formula flag">Unbilled; unpaid</td>
+              </tr>
+              <tr>
+                <td class="input">PCO-004</td>
+                <td class="input">Negotiating</td>
+                <td class="input">$17,200</td>
+                <td class="input">—</td>
+                <td class="input">—</td>
+                <td class="formula">$17,200</td>
+                <td class="formula">$0</td>
+                <td class="formula flag">Overdue; high exposure</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="fine">Synthetic dashboard totals after Microsoft Excel recalculation: US$26,400 open unapproved exposure, US$1,600 approved-not-billed, US$3,000 billed-not-paid, and US$43,750 expected final impact.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="eyebrow">Delivery proof</div>
+        <h2>The workbook already exists.</h2>
+        <p class="lead">Version 1.0 was generated, reopened, fully recalculated in Microsoft Excel, and checked against all five synthetic examples before this page was published.</p>
+        <div class="proof">
+          <div><strong>4 sheets</strong>Start, log, dashboard, dictionary</div>
+          <div><strong>100 changes</strong>Formula and validation capacity</div>
+          <div><strong>43,685 bytes</strong>Macro-free .xlsx artifact</div>
+          <div><strong>Excel verified</strong>Totals and exceptions recalculated</div>
+        </div>
+        <p class="fine">Artifact SHA-256: <code>8753af524204201d5d3bfc3e161ecda6459d02983b3035b4c5b4308f0ad3a0a1</code></p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="eyebrow">Boundaries</div>
+        <h2>An operating aid, not the contract or ledger.</h2>
+        <div class="grid">
+          <div class="card"><strong>Reconcile to source systems</strong>Approval, billed, and paid amounts must agree with the authoritative project and accounting records.</div>
+          <div class="card"><strong>Keep sensitive evidence elsewhere</strong>Do not embed contracts, signatures, banking details, personal data, photographs, or confidential attachments.</div>
+          <div class="card"><strong>No professional-advice claim</strong>The workbook does not determine entitlement, notice compliance, approval, collectability, or legal rights and is not contract, billing, accounting, tax, or legal advice.</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="eyebrow">Order</div>
+        <h2>Request the ready-to-deliver tracker.</h2>
+        <p class="lead">The order request is public and asks only about your role, spreadsheet application, and intended use. Do not include project names, contracts, customer or employee data, financial records, payment information, attachments, or an email address.</p>
+        <div class="actions">
+          <a class="button" href="https://github.com/Mmxfq/firstpass-site/issues/new?template=change-order-tracker-order.yml">Request it for US$29</a>
+        </div>
+        <p class="fine">Availability and private payment and delivery instructions are confirmed before payment is due. Delivery begins only after cleared payment. The workbook may not be redistributed, resold, sublicensed, or published.</p>
+        <p class="fine">Built from recurring public workflow requests for separate pending, approved, and unapproved change logs, projected final cost, status, and aging—not from any private project data.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <p>© 2026 FirstPass · Change Order Exposure Tracker · Operational tracking only</p>
+  </footer>
+</body>
+</html>
