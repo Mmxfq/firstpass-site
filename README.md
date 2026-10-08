@@ -10,6 +10,7 @@ products.
 - complete hero rewrite: eyebrow, headline, subheadline, CTA, and trust line
 - reproducible acceptance checks
 - one clarification round
+- one public-page recheck of implemented priority fixes within seven days
 - delivery within one business day after scope confirmation
 
 No meeting or account access is required. FirstPass reviews public marketing

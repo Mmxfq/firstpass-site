@@ -21,7 +21,8 @@ delivery includes:
    usability, basic accessibility, and basic technical performance.
 6. Reproducible acceptance checks for each priority change.
 7. A seven-day action plan ordered by impact and effort.
-8. One clarification round by email within seven days.
+8. One clarification round within seven days.
+9. One public-page recheck of implemented priority fixes within seven days.
 
 Turnaround begins when the URL and payment are received. Scope is one public
 marketing website with up to five representative pages plus its unauthenticated
