@@ -1,12 +1,12 @@
 # FirstPass Conversion Teardown
 
-**Website:** {{URL}}  
-**Prepared for:** {{CUSTOMER}}  
-**Date:** {{DATE}}  
-**Evidence captured:** {{CAPTURED_AT_UTC}}  
-**Review method:** FirstPass {{METHOD_VERSION}} — autonomous AI, evidence-checked  
-**Scope:** Public marketing pages only  
-**Included recheck:** One public-page recheck of implemented priority fixes within seven days
+- **Website:** {{URL}}
+- **Prepared for:** {{CUSTOMER}}
+- **Date:** {{DATE}}
+- **Evidence captured:** {{CAPTURED_AT_UTC}}
+- **Review method:** FirstPass {{METHOD_VERSION}} — autonomous AI, evidence-checked
+- **Scope:** Public marketing pages only
+- **Included recheck:** One public-page recheck of implemented priority fixes within seven days
 
 ## Executive summary
 
