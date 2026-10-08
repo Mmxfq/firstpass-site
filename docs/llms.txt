@@ -10,6 +10,7 @@ Public FormTake mini teardown: https://mmxfq.github.io/firstpass-site/formtake-m
 Public EntrenAI mini teardown: https://mmxfq.github.io/firstpass-site/entrenai-mini-teardown.html
 Public VoiceGremlin first-run teardown: https://mmxfq.github.io/firstpass-site/voicegremlin-mini-teardown.html
 Public Tolerable Workplace trust-path teardown: https://mmxfq.github.io/firstpass-site/tolerable-workplace-mini-teardown.html
+Public Futex activation-path teardown: https://mmxfq.github.io/firstpass-site/futex-mini-teardown.html
 DIY product: SaaS Hero Rewrite Kit, US$9: https://mmxfq.github.io/firstpass-site/hero-kit.html
 Free SaaS Hero Brief Builder: https://mmxfq.github.io/firstpass-site/hero-brief.html
 Free Hero Rewrite Kit sample: https://mmxfq.github.io/firstpass-site/hero-kit-sample.txt
