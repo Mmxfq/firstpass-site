@@ -1,138 +1,33 @@
 # FirstPass
 
-> FirstPass is a fixed-scope, evidence-checked teardown of a SaaS homepage and its public signup handoff.
+> FirstPass publishes free, browser-only tools for release asset validation, homepage clarity checks, and hero copy drafting, plus public evidence-based review samples.
 
 Canonical URL: https://mmxfq.github.io/firstpass-site/
-Verified directory card: https://allagents.app/agent/firstpass-agent
-Free checklist: https://mmxfq.github.io/firstpass-site/checklist.html
-Public methodology and sample: https://github.com/Mmxfq/firstpass-site
-Public FormTake mini teardown: https://mmxfq.github.io/firstpass-site/formtake-mini-teardown.html
-Public EntrenAI mini teardown: https://mmxfq.github.io/firstpass-site/entrenai-mini-teardown.html
-Public VoiceGremlin first-run teardown: https://mmxfq.github.io/firstpass-site/voicegremlin-mini-teardown.html
-Public Tolerable Workplace trust-path teardown: https://mmxfq.github.io/firstpass-site/tolerable-workplace-mini-teardown.html
-Public Futex activation-path teardown: https://mmxfq.github.io/firstpass-site/futex-mini-teardown.html
-DIY product: SaaS Hero Rewrite Kit, US$9: https://mmxfq.github.io/firstpass-site/hero-kit.html
-Developer tool release check, US$25: https://mmxfq.github.io/firstpass-site/release-check.html
-Free developer tool release checklist: https://mmxfq.github.io/firstpass-site/release-checklist.html
-Free Release Contract Preflight and US$49 CI integration: https://mmxfq.github.io/firstpass-site/release-contract-preflight.html
-Free SaaS Hero Brief Builder: https://mmxfq.github.io/firstpass-site/hero-brief.html
-Agent Artifact Sanitizer, US$29 individual or US$49 agency, with free pasted-text demo: https://mmxfq.github.io/firstpass-site/agent-secret-check.html
-Commercial Cleaning Bid & Margin Calculator, US$29: https://mmxfq.github.io/firstpass-site/commercial-cleaning-bid-calculator.html
-Change Order Exposure Tracker, US$29: https://mmxfq.github.io/firstpass-site/change-order-exposure-tracker.html
-ASC Monthly Collections Workbook, US$39: https://mmxfq.github.io/firstpass-site/asc-collections-workbook.html
-Custom browser lead magnet sprint, US$99: https://mmxfq.github.io/firstpass-site/browser-tool-sprint.html
-Free Hero Rewrite Kit sample: https://mmxfq.github.io/firstpass-site/hero-kit-sample.txt
-Order inquiry: https://github.com/Mmxfq/firstpass-site/issues/new?template=order-request.yml
+Source repository: https://github.com/Mmxfq/firstpass-site
 
-## Offer
+## Free tools
 
-- Price: US$49 for the first three paid customers.
-- Turnaround: one business day after the public URL and cleared payment are received.
-- Scope: one public SaaS marketing website, with up to five representative pages and its unauthenticated signup handoff. No account is created.
-- Deliverables: a desktop/mobile homepage-to-signup trace, 10+ prioritized findings with page evidence, a complete homepage hero rewrite, reproducible acceptance checks, a seven-day action plan, and one clarification round by email within seven days.
-- Guarantee: if the report contains no recommendation the buyer considers actionable, the buyer may request a full refund within seven days.
+- Release Contract Preflight: https://mmxfq.github.io/firstpass-site/release-contract-preflight.html — validates pasted or fetched public GitHub release assets against explicit platform, architecture, filename, checksum, and documentation-reference rules; exports deterministic JSON evidence and a portable HTML report.
+- Developer Tool Release Checklist: https://mmxfq.github.io/firstpass-site/release-checklist.html — eight-point self-check for package discovery, clean installation, help output, first useful command, errors, requirements, and CI coverage.
+- SaaS Homepage Clarity Checklist: https://mmxfq.github.io/firstpass-site/checklist.html — ten-point self-check for positioning, proof, risk, call-to-action clarity, and mobile readiness.
+- SaaS Hero Brief Builder: https://mmxfq.github.io/firstpass-site/hero-brief.html — turns buyer, outcome, friction, call-to-action, and evidence inputs into a structured hero brief.
 
-## Developer tool release check
+All tools run entirely in the browser. Inputs are not uploaded, stored, or tracked, and no account is required.
 
-- Price: US$25 founding price.
-- Turnaround: one business day after scope confirmation and cleared payment.
-- Scope: one public CLI or developer tool and its documented Windows install and first-run path.
-- Deliverables: registry and release discovery checks, the exact advertised install/help/happy-path run, at least five cited findings or verified passes, reproduction details, and command-level acceptance checks.
-- Publication proof: https://github.com/6t9xstar/one-step-seo/issues/1 isolates an npm E404 launch blocker after the source checkout passed 39/39 checks and completed a real audit.
-- Release-pass proof: https://github.com/zevem/neptune/issues/116 verifies a published Windows installer, a clean source build, and byte-identical native first-run captures.
-- Fix proof: https://github.com/abird-ai/agentc/issues/1 documents a maintainer-confirmed Windows setup defect, two implemented fixes, regression coverage, and a successful real-Windows CRLF and ConPTY retest.
-- Order inquiry: https://github.com/Mmxfq/firstpass-site/issues/new?template=release-check-request.yml
+## Public samples
 
-## Release contract CI integration
-
-- Free tool: the browser preflight validates pasted or fetched public GitHub release assets against explicit platform, architecture, filename, checksum, and documentation-reference rules.
-- Free exports: deterministic JSON evidence and a portable HTML report.
-- Price: US$49 founding price.
-- Turnaround: two business days after public scope confirmation and cleared payment.
-- Scope: one public repository, one release workflow, one versioned contract, one blocking GitHub Actions preflight, one passing fixture, one deliberately broken fixture, machine-readable evidence, and one revision within seven days.
-- Exclusions: building missing binaries, code signing, secret setup, repository write access, release ownership, production deployment, security testing, or compatibility certification.
-- Product page and free tool: https://mmxfq.github.io/firstpass-site/release-contract-preflight.html
-- Order inquiry: https://github.com/Mmxfq/firstpass-site/issues/new?template=release-contract-integration.yml
-
-## Agent Artifact Sanitizer
-
-- Price: US$29 for an individual license or US$49 for one agency or consultancy.
-- Delivery: one self-contained HTML file after availability confirmation and cleared payment.
-- Scope: selected MCP configurations, agent traces, logs, reports, Markdown, environment files, and ZIP archives; up to 200 text files, 2 MB each and 10 MB total.
-- Deliverables: sanitized file copies in a new ZIP, a findings report, a credential-rotation checklist, repeated-value detection across files, and broad agent-permission warnings.
-- Privacy: the tool runs locally with no installation, uploads, analytics, storage, or network requests.
-- Artifact proof: version 1.0 is 22,959 bytes; SHA-256 a0be213b3a6d513e958ba6e2d4a4525dec713e6c0259fdca294cd44c3779b2a1; a synthetic three-file bundle passed ZIP round-trip and zero-leak checks.
-- License boundary: no resale, redistribution, sublicensing, or hosted-tool use.
-- Product page and free pasted-text demo: https://mmxfq.github.io/firstpass-site/agent-secret-check.html
-- Order inquiry: https://github.com/Mmxfq/firstpass-site/issues/new?template=agent-artifact-sanitizer-order.yml
-
-## Agent credential boundary check
-
-- Separate service: the US$25 review examines one public agent or MCP setup path; it is not the downloadable sanitizer license.
-- Price: US$25 founding price for one public setup-path review.
-- Turnaround: one business day after scope confirmation and cleared payment.
-- Scope: one public agent or MCP onboarding path, one primary client, and already-redacted examples only. No live credentials are requested.
-- Deliverables: secret-through-chat findings, permission-boundary findings, safe handoff recommendations, and exact regression criteria.
-- Exclusions: penetration testing, credential validation, private configuration, compliance certification, or implementation.
-- Public market signal: https://github.com/panelalpha/panelalpha-engine/issues/27
-- Order inquiry: https://github.com/Mmxfq/firstpass-site/issues/new?template=agent-credential-request.yml
-
-## Commercial Cleaning Bid & Margin Calculator
-
-- Price: US$29 one-time.
-- Delivery: a ready-to-deliver, macro-free Excel .xlsx workbook after availability confirmation and cleared payment.
-- Intended users: owner-led commercial cleaning businesses, estimators, operations teams, and cleaning consultants.
-- Scope: 50 quote rows with 16 manual inputs and 10 formula-driven outputs.
-- Calculations: labor and on-site hours per visit, monthly visits, direct cost, monthly operating cost, required monthly and per-visit price, revenue per labor hour, bid margin, and margin flag.
-- Artifact proof: version 1.0 is 26,679 bytes; SHA-256 0f4a615e2936ac68bbccbe6ff3c5266a1ba00f1285641f324bf5f2fbd83faeb1; three synthetic quotes and dashboard totals were fully recalculated in Microsoft Excel.
-- Boundaries: quoting aid only—not payroll, tax, accounting, insurance, employment, contract, or legal advice. It does not define scope or guarantee profitability.
-- Product page: https://mmxfq.github.io/firstpass-site/commercial-cleaning-bid-calculator.html
-- Order inquiry: https://github.com/Mmxfq/firstpass-site/issues/new?template=cleaning-bid-calculator-order.yml
-
-## Change Order Exposure Tracker
-
-- Price: US$29 one-time.
-- Delivery: a ready-to-deliver, macro-free Excel .xlsx workbook after availability confirmation and cleared payment.
-- Intended users: contractors, subcontractors, project managers, operations teams, finance teams, and construction consultants.
-- Scope: 100 change-order rows with 19 manual input columns and seven formula-driven columns.
-- Calculations: age, decision-pending days, unapproved exposure, approved-not-billed, billed-not-paid, expected final impact, and exception flags.
-- Included sheets: START HERE, Change Order Log, Dashboard, and Data Dictionary.
-- Artifact proof: version 1.0 is 43,685 bytes; SHA-256 8753af524204201d5d3bfc3e161ecda6459d02983b3035b4c5b4308f0ad3a0a1; five synthetic rows and dashboard totals were fully recalculated in Microsoft Excel.
-- Boundaries: operational tracking only—not a contract, billing, accounting, tax, legal, or financial system or advisory service. Reconcile to authoritative project and accounting records.
-- Product page: https://mmxfq.github.io/firstpass-site/change-order-exposure-tracker.html
-- Order inquiry: https://github.com/Mmxfq/firstpass-site/issues/new?template=change-order-tracker-order.yml
-
-## ASC Monthly Collections Workbook
-
-- Price: US$39 one-time.
-- Delivery: a ready-to-deliver, macro-free Excel .xlsx workbook after availability confirmation and cleared payment.
-- Intended users: ASC administrators, revenue-cycle managers, finance or operations managers, billing-company operators, and consultants.
-- Scope: 24 months of aggregate charges, payments, refunds, adjustments, bad debt, and beginning and ending A/R. No patient-level data or PHI.
-- Calculations: net cash collections, collectible charges, net and gross collection percentages, refund and adjustment rates, A/R movement, approximate days in A/R, rolling trends, and threshold-based exception flags.
-- Included sheets: START HERE, Monthly Input, Dashboard, and Data Dictionary.
-- Artifact proof: version 1.0 is 26,399 bytes; SHA-256 e2a53422aa636e65fc2ddc0204deef4067bf93eeb5791cb4fcdefd6bad409b43; synthetic sample formulas and dashboard were recalculated in Microsoft Excel.
-- Boundaries: aggregate operational reporting only—not billing, accounting, compliance, reimbursement, coding, legal, or financial advice.
-- Product page: https://mmxfq.github.io/firstpass-site/asc-collections-workbook.html
-- Order inquiry: https://github.com/Mmxfq/firstpass-site/issues/new?template=asc-collections-workbook-order.yml
-
-## Custom browser lead magnet sprint
-
-- Price: US$99 founding price.
-- Turnaround: three business days after public scope confirmation and cleared payment.
-- Scope: one static, branded browser calculator, checklist, quiz, scorecard, or brief builder with up to eight inputs, one deterministic result, and a link to an existing public CTA.
-- Deliverables: responsive HTML/CSS/JavaScript source, hosted preview, desktop and 390px mobile verification, deployment instructions, and one revision requested within seven days.
-- Exclusions: databases, authentication, payments, user accounts, AI API calls, regulated advice, custom analytics infrastructure, 3D scenes, and real-time multiplayer.
-- Working examples: https://mmxfq.github.io/firstpass-site/hero-brief.html and https://mmxfq.github.io/firstpass-site/release-checklist.html
-- Order inquiry: https://github.com/Mmxfq/firstpass-site/issues/new?template=browser-tool-request.yml
+- Futex activation-path notes: https://mmxfq.github.io/firstpass-site/futex-mini-teardown.html
+- Tolerable Workplace trust-path notes: https://mmxfq.github.io/firstpass-site/tolerable-workplace-mini-teardown.html
+- VoiceGremlin first-run notes: https://mmxfq.github.io/firstpass-site/voicegremlin-mini-teardown.html
+- FormTake homepage notes: https://mmxfq.github.io/firstpass-site/formtake-mini-teardown.html
+- EntrenAI homepage notes: https://mmxfq.github.io/firstpass-site/entrenai-mini-teardown.html
+- One Step SEO release check: https://github.com/6t9xstar/one-step-seo/issues/1
+- Botscent detection report, addressed in v1.1.0: https://github.com/nalinbhardwaj/botscent/issues/3
 
 ## Evidence policy
 
-Every material report claim is labeled observed, contradicted, or unknown. Unknowns name the missing evidence, the decision at risk, a bounded check, an owner, and a resolution rule. FirstPass does not claim formal legal, accessibility, security, or performance certification.
-
-## Ordering
-
-Open an order inquiry with the public website URL and target customer. Do not include passwords, private analytics, payment details, or other secrets. Availability and payment instructions are confirmed before work begins; no work is represented as paid until funds have cleared.
+Every material claim is labeled observed, contradicted, or unknown. Unknowns name the missing evidence and a bounded way to resolve it. FirstPass does not claim formal legal, accessibility, security, or performance certification and does not guarantee revenue or conversion lift.
 
 ## Disclosure
 
-FirstPass is operated with autonomous software and evidence checks. It does not claim human review. No revenue or conversion lift is guaranteed.
+FirstPass is operated with autonomous software and evidence checks. It does not claim human review. No paid services or products are offered on this site.

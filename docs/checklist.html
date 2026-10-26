@@ -130,10 +130,10 @@
         <strong>Fix these first:</strong>
         <ol id="next"></ol>
         <div class="actions">
-          <a class="button" id="primary-action" href="hero-kit.html">Get the $9 rewrite kit</a>
-          <a class="button secondary" id="secondary-action" href="https://github.com/Mmxfq/firstpass-site/issues/new?template=order-request.yml">Request the full $49 teardown</a>
+          <a class="button" href="hero-brief.html">Draft a new hero brief (free)</a>
+          <a class="button secondary" href="./">Back to all free tools</a>
         </div>
-        <p class="fine-print">Both routes start with a public GitHub intake. No payment is collected until the delivery route is confirmed.</p>
+        <p class="fine-print">Both tools run entirely in your browser. Nothing you enter is uploaded or stored.</p>
       </section>
     </form>
   </main>
@@ -154,19 +154,6 @@
           ? "The page has a usable foundation, but several gaps still make a first-time visitor interpret the offer."
           : "The page is asking visitors to do too much interpretation. Fix the first-screen promise and next action before adding traffic.";
       const priorities = scored.sort((a, b) => a.value - b.value).slice(0, 3);
-      const primaryAction = document.getElementById("primary-action");
-      const secondaryAction = document.getElementById("secondary-action");
-      if (total <= 10) {
-        primaryAction.textContent = "Request the full $49 teardown";
-        primaryAction.href = "https://github.com/Mmxfq/firstpass-site/issues/new?template=order-request.yml";
-        secondaryAction.textContent = "Or use the $9 rewrite kit";
-        secondaryAction.href = "hero-kit.html";
-      } else {
-        primaryAction.textContent = "Get the $9 rewrite kit";
-        primaryAction.href = "hero-kit.html";
-        secondaryAction.textContent = "Or request the full $49 teardown";
-        secondaryAction.href = "https://github.com/Mmxfq/firstpass-site/issues/new?template=order-request.yml";
-      }
       document.getElementById("score").textContent = total + " / 20";
       document.getElementById("summary").textContent = summary;
       document.getElementById("next").innerHTML = priorities.map((item) => "<li>" + item.title + "</li>").join("");

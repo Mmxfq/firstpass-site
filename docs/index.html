@@ -3,36 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Evidence-checked desktop/mobile SaaS homepage-to-signup teardown with 10+ cited fixes, hero rewrite, and acceptance checks in one business day.">
+  <meta name="description" content="FirstPass: free, browser-only tools for release asset validation, homepage clarity checks, and hero copy drafting, plus public evidence-based review samples.">
   <link rel="canonical" href="https://mmxfq.github.io/firstpass-site/">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="alternate" type="text/plain" href="llms.txt" title="LLM-readable FirstPass service description">
+  <link rel="alternate" type="text/plain" href="llms.txt" title="LLM-readable FirstPass description">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="FirstPass — 24-Hour SaaS Conversion Teardown">
-  <meta property="og:description" content="A live homepage-to-signup review, 10+ evidence-backed findings, a hero rewrite, and acceptance checks for US$49.">
+  <meta property="og:title" content="FirstPass — Free release and homepage tools">
+  <meta property="og:description" content="Free browser tools for release asset validation, homepage clarity checks, and hero copy drafting, plus public evidence-based review samples.">
   <meta property="og:url" content="https://mmxfq.github.io/firstpass-site/">
-  <meta property="og:image" content="https://mmxfq.github.io/firstpass-site/firstpass-social.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="FirstPass: Find where your launch loses the first click.">
-  <meta name="twitter:card" content="summary_large_image">
-  <title>FirstPass — 24-Hour SaaS Conversion Teardown</title>
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "FirstPass SaaS Conversion Teardown",
-      "description": "An evidence-checked SaaS homepage and public signup-path teardown delivered in one business day.",
-      "url": "https://mmxfq.github.io/firstpass-site/",
-      "areaServed": "Worldwide",
-      "offers": {
-        "@type": "Offer",
-        "price": "49",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock"
-      }
-    }
-  </script>
+  <title>FirstPass — Free release and homepage tools</title>
   <style>
     :root {
       --ink: #17211b;
@@ -41,56 +20,33 @@
       --card: #fffdf8;
       --line: #d8d2c5;
       --accent: #1e6848;
-      --accent-dark: #124832;
       --warm: #e8bb62;
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       color: var(--ink);
-      background:
-        radial-gradient(circle at 85% 5%, rgba(232,187,98,.22), transparent 28rem),
-        var(--paper);
+      background: radial-gradient(circle at 88% 5%, rgba(232,187,98,.24), transparent 28rem), var(--paper);
       font: 17px/1.6 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
-    a { color: inherit; }
-    .wrap { width: min(1080px, calc(100% - 40px)); margin: auto; }
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 24px 0;
-      font-weight: 750;
-    }
-    nav small { color: var(--muted); font-weight: 600; }
-    .hero {
-      display: grid;
-      grid-template-columns: 1.35fr .65fr;
-      gap: 64px;
-      align-items: center;
-      padding: 72px 0 96px;
-    }
-    .eyebrow {
-      color: var(--accent);
-      font-size: .78rem;
-      font-weight: 850;
-      letter-spacing: .13em;
-      text-transform: uppercase;
-    }
-    h1 {
-      max-width: 760px;
-      margin: 12px 0 22px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(3rem, 7vw, 6.4rem);
-      font-weight: 500;
-      letter-spacing: -.055em;
-      line-height: .98;
-    }
-    .lead { max-width: 660px; color: var(--muted); font-size: 1.2rem; }
-    .actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
+    a { color: var(--accent); }
+    .wrap { width: min(960px, calc(100% - 40px)); margin: auto; }
+    nav { display: flex; justify-content: space-between; gap: 20px; padding: 24px 0; font-weight: 850; }
+    nav a { color: inherit; text-decoration: none; }
+    header { padding: 56px 0 48px; }
+    .eyebrow { color: var(--accent); font-size: .78rem; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+    h1, h2 { font-family: Georgia, "Times New Roman", serif; font-weight: 500; letter-spacing: -.04em; }
+    h1 { max-width: 840px; margin: 12px 0 22px; font-size: clamp(2.8rem, 7vw, 5.6rem); line-height: .98; }
+    h2 { margin: 0 0 16px; font-size: clamp(1.9rem, 4vw, 2.8rem); line-height: 1.08; }
+    .lead { max-width: 760px; color: var(--muted); font-size: 1.15rem; }
+    section { padding: 54px 0; border-top: 1px solid var(--line); }
+    .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 26px; }
+    .card { padding: 24px; border: 1px solid var(--line); border-radius: 16px; background: var(--card); }
+    .card strong { display: block; margin-bottom: 8px; font-size: 1.1rem; }
+    .card p { margin: 0 0 14px; color: var(--muted); }
     .button {
       display: inline-block;
-      padding: 14px 21px;
+      padding: 11px 18px;
       border: 1px solid var(--ink);
       border-radius: 999px;
       background: var(--accent);
@@ -99,273 +55,85 @@
       text-decoration: none;
       box-shadow: 4px 4px 0 var(--ink);
     }
-    .button:hover, .button:focus { background: var(--accent-dark); transform: translate(1px, 1px); box-shadow: 3px 3px 0 var(--ink); }
-    .price-card {
-      padding: 30px;
-      border: 1px solid var(--ink);
-      border-radius: 22px;
-      background: var(--card);
-      box-shadow: 8px 8px 0 var(--warm);
-    }
-    .price { margin: 4px 0; font: 500 4rem/1 Georgia, serif; }
-    .price-card ul { padding-left: 20px; }
-    .price-card small { color: var(--muted); }
-    .fact-strip {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 1px;
-      margin: 0 0 54px;
-      padding: 1px;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      overflow: hidden;
-      background: var(--line);
-      list-style: none;
-    }
-    .fact-strip li { padding: 18px; background: var(--card); }
-    .fact-strip strong { display: block; color: var(--accent); }
-    section { padding: 80px 0; border-top: 1px solid var(--line); }
-    h2 { margin: 0 0 14px; font: 500 clamp(2rem, 4vw, 3.4rem)/1.08 Georgia, serif; letter-spacing: -.035em; }
-    .section-copy { max-width: 680px; color: var(--muted); }
-    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 34px; }
-    .card { padding: 24px; border: 1px solid var(--line); border-radius: 16px; background: rgba(255,253,248,.76); }
-    .card strong { display: block; margin-bottom: 8px; }
-    .number { color: var(--accent); font: 500 2.2rem/1 Georgia, serif; }
-    .sample {
-      margin-top: 34px;
-      padding: 28px;
-      border-left: 5px solid var(--warm);
-      background: var(--card);
-    }
-    .sample p { margin-bottom: 0; }
-    .sample-link { display: inline-block; margin-top: 20px; font-weight: 800; }
-    .fine { color: var(--muted); font-size: .88rem; }
-    footer { padding: 40px 0 70px; color: var(--muted); }
-    @media (max-width: 760px) {
-      .hero { grid-template-columns: 1fr; gap: 36px; padding: 45px 0 70px; }
+    .list { padding-left: 20px; }
+    .list li { margin: 9px 0; }
+    .note { padding: 20px 24px; border-left: 5px solid var(--warm); background: var(--card); }
+    footer { padding: 38px 0 64px; color: var(--muted); border-top: 1px solid var(--line); }
+    @media (max-width: 720px) {
+      header { padding-top: 36px; }
       .grid { grid-template-columns: 1fr; }
-      .fact-strip { grid-template-columns: 1fr 1fr; }
-      .fact-strip li:last-child:nth-child(odd) { grid-column: 1 / -1; }
-      nav small { display: none; }
     }
   </style>
 </head>
 <body>
+  <nav class="wrap"><a href="./">FirstPass</a><span>Free tools · public samples</span></nav>
+
   <header class="wrap">
-    <nav>
-      <span>FirstPass</span>
-      <small>Homepage to signup. Evidence at every step.</small>
-    </nav>
-    <div class="hero">
-      <div>
-        <div class="eyebrow">For newly launched SaaS products</div>
-        <h1>Find where your launch loses the first click.</h1>
-        <p class="lead">FirstPass traces the live path from homepage to public signup on desktop and mobile, then delivers cited findings, a complete hero rewrite, and reproducible acceptance checks in one business day.</p>
-        <div class="actions">
-          <a class="button" href="https://github.com/Mmxfq/firstpass-site/issues/new?template=order-request.yml">Request the $49 founding package</a>
-          <a href="#sample">See a sample finding</a>
-          <a href="checklist.html">Run the free 2-minute checklist</a>
-        </div>
-      </div>
-      <aside class="price-card" aria-label="Package details">
-        <div class="eyebrow">Founding-client price</div>
-        <div class="price">$49</div>
-        <small>One-time. No call or subscription.</small>
-        <ul>
-          <li>Live homepage-to-signup review</li>
-          <li>10+ prioritized, cited findings</li>
-          <li>Complete homepage hero rewrite</li>
-          <li>Acceptance checks + seven-day plan</li>
-          <li>One clarification round + public-page recheck</li>
-          <li>One-business-day delivery</li>
-        </ul>
-      </aside>
-    </div>
-    <ul class="fact-strip" aria-label="FirstPass service facts">
-      <li><strong>US$49</strong>one-time founding price</li>
-      <li><strong>1 business day</strong>after scope and cleared payment</li>
-      <li><strong>Up to 5 pages</strong>plus public signup handoff</li>
-      <li><strong>Desktop + mobile</strong>live-path review</li>
-      <li><strong>No account access</strong>public pages only</li>
-    </ul>
+    <div class="eyebrow">Evidence before announcement</div>
+    <h1>Free browser tools for releases and homepages.</h1>
+    <p class="lead">Every tool on this page runs entirely in your browser. Nothing you paste or type is uploaded, stored, or tracked. No account is required.</p>
   </header>
 
   <main>
     <section>
       <div class="wrap">
-        <div class="eyebrow">What you receive</div>
-        <h2>A fix list, not a score.</h2>
-        <p class="section-copy">Automated scanners can flag generic patterns. FirstPass reviews the actual story and decision path on your public marketing pages, then writes changes you can ship.</p>
+        <div class="eyebrow">Free tools</div>
+        <h2>Check the release, then check the first screen.</h2>
         <div class="grid">
-          <div class="card"><span class="number">01</span><strong>Evidence</strong>Each finding points to the page element that creates confusion or friction.</div>
-          <div class="card"><span class="number">02</span><strong>Priority</strong>Recommendations are ranked by likely impact and implementation effort.</div>
-          <div class="card"><span class="number">03</span><strong>Replacement copy</strong>You get a rewritten eyebrow, headline, subheadline, CTA, and trust line.</div>
-        </div>
-      </div>
-    </section>
-
-    <section id="sample">
-      <div class="wrap">
-        <div class="eyebrow">Example finding</div>
-        <h2>Specific enough to ship.</h2>
-        <div class="sample">
-          <strong>High priority — The headline names the mechanism, not the buyer's outcome.</strong>
-          <p><b>Observed:</b> “AI-powered workspace intelligence” requires visitors to interpret both the audience and value. <b>Change:</b> name the user, recurring task, and saved effort in the headline; move the AI mechanism into supporting copy. <b>Acceptance check:</b> an unfamiliar reader can answer “who is this for?” and “what gets easier?” after five seconds.</p>
-        </div>
-        <a class="sample-link" href="futex-mini-teardown.html">Read the latest public mini teardown: Futex →</a>
-        <a class="sample-link" href="tolerable-workplace-mini-teardown.html">See another example: Tolerable Workplace →</a>
-        <a class="sample-link" href="voicegremlin-mini-teardown.html">See another example: VoiceGremlin →</a>
-        <p class="fine"><strong>Verified outcome:</strong> a reproduced Cursor-browser detection gap led Botscent to ship support in <a href="https://github.com/nalinbhardwaj/botscent/releases/tag/v1.1.0">version 1.1.0</a>. <a href="https://github.com/nalinbhardwaj/botscent/issues/3">Read the report and maintainer response.</a></p>
-      </div>
-    </section>
-
-    <section>
-      <div class="wrap">
-        <div class="eyebrow">Before an agent artifact leaves your machine</div>
-        <h2>Sanitize files and ZIPs offline.</h2>
-        <p class="section-copy">The full Agent Artifact Sanitizer scans selected MCP configs, agent traces, logs, documentation, and ZIP archives; traces repeated credentials across files; and exports a redacted ZIP, findings report, and rotation checklist without network requests. Individual licenses are US$29 and agency licenses are US$49.</p>
-        <div class="actions">
-          <a class="button" href="agent-secret-check.html">See the sanitizer and free demo</a>
-          <a href="https://github.com/Mmxfq/firstpass-site/issues/new?template=agent-artifact-sanitizer-order.yml">Request a license</a>
-          <a href="https://github.com/Mmxfq/firstpass-site/issues/new?template=agent-credential-request.yml">Request the US$25 setup-boundary check</a>
-          <a href="https://github.com/panelalpha/panelalpha-engine/issues/27">See the market signal that prompted it</a>
+          <div class="card">
+            <strong>Release Contract Preflight</strong>
+            <p>Compare a GitHub release's actual asset inventory with explicit platform, architecture, filename, checksum, and documentation-reference rules. Exports JSON and HTML evidence.</p>
+            <a class="button" href="release-contract-preflight.html">Open the preflight</a>
+          </div>
+          <div class="card">
+            <strong>Developer Tool Release Checklist</strong>
+            <p>An eight-point self-check covering package discovery, clean installation, help output, the first useful command, error messages, requirements, and CI coverage.</p>
+            <a class="button" href="release-checklist.html">Run the release checklist</a>
+          </div>
+          <div class="card">
+            <strong>SaaS Homepage Clarity Checklist</strong>
+            <p>A two-minute, ten-point self-check for positioning, proof, risk, call-to-action clarity, and mobile readiness.</p>
+            <a class="button" href="checklist.html">Run the clarity checklist</a>
+          </div>
+          <div class="card">
+            <strong>SaaS Hero Brief Builder</strong>
+            <p>Turn buyer, outcome, friction, call-to-action, and evidence inputs into a structured hero brief. Missing evidence stays visibly unknown instead of becoming invented proof.</p>
+            <a class="button" href="hero-brief.html">Build a hero brief</a>
+          </div>
         </div>
       </div>
     </section>
 
     <section>
       <div class="wrap">
-        <div class="eyebrow">For commercial cleaning quotes</div>
-        <h2>Check the margin before submitting the bid.</h2>
-        <p class="section-copy">The US$29 Commercial Cleaning Bid &amp; Margin Calculator converts site size, production rate, crew, frequency, labor, supplies, travel, overhead, and target margin into a traceable monthly price. Version 1.0 is complete and verified in Microsoft Excel.</p>
-        <div class="actions">
-          <a class="button" href="commercial-cleaning-bid-calculator.html">See the cleaning bid calculator</a>
-          <a href="https://github.com/Mmxfq/firstpass-site/issues/new?template=cleaning-bid-calculator-order.yml">Request the ready-to-deliver file</a>
-        </div>
-        <p class="fine">Quoting aid only—not payroll, tax, accounting, insurance, employment, contract, or legal advice. Validate every scope, rate, and cost before submitting a quote.</p>
+        <div class="eyebrow">Public samples</div>
+        <h2>Evidence-based review notes on public products.</h2>
+        <ul class="list">
+          <li><a href="futex-mini-teardown.html">Futex activation-path notes</a></li>
+          <li><a href="tolerable-workplace-mini-teardown.html">Tolerable Workplace trust-path notes</a></li>
+          <li><a href="voicegremlin-mini-teardown.html">VoiceGremlin first-run notes</a></li>
+          <li><a href="formtake-mini-teardown.html">FormTake homepage notes</a></li>
+          <li><a href="entrenai-mini-teardown.html">EntrenAI homepage notes</a></li>
+          <li><a href="https://github.com/6t9xstar/one-step-seo/issues/1">One Step SEO: source passed 39/39 checks while the npm launch path returned E404</a></li>
+          <li><a href="https://github.com/nalinbhardwaj/botscent/issues/3">Botscent: reproduced Cursor-browser detection gap, addressed in v1.1.0</a></li>
+        </ul>
+        <p class="note">Every material claim in these notes is labeled observed, contradicted, or unknown. They describe public pages on the dates stated, were produced without accounts or private data, and do not claim measured conversion lift.</p>
       </div>
     </section>
 
     <section>
       <div class="wrap">
-        <div class="eyebrow">For construction change control</div>
-        <h2>See pending exposure before it becomes a surprise.</h2>
-        <p class="section-copy">The US$29 Change Order Exposure Tracker keeps current forecasts, approvals, billings, payments, next actions, and age-based exceptions in one macro-free Excel workbook. Version 1.0 is complete and verified in Microsoft Excel.</p>
-        <div class="actions">
-          <a class="button" href="change-order-exposure-tracker.html">See the change order tracker</a>
-          <a href="https://github.com/Mmxfq/firstpass-site/issues/new?template=change-order-tracker-order.yml">Request the ready-to-deliver file</a>
-        </div>
-        <p class="fine">Operational tracking only—not a contract, billing, accounting, tax, legal, or financial system or advisory service. Reconcile every amount to authoritative project and accounting records.</p>
-      </div>
-    </section>
-
-    <section>
-      <div class="wrap">
-        <div class="eyebrow">For ASC monthly reporting</div>
-        <h2>Track collections without rebuilding the spreadsheet.</h2>
-        <p class="section-copy">The US$39 ASC Monthly Collections Workbook turns aggregate charges, payments, refunds, adjustments, and A/R into collection rates, rolling trends, approximate days in A/R, and exception flags. Version 1.0 is complete, macro-free, and verified in Microsoft Excel.</p>
-        <div class="actions">
-          <a class="button" href="asc-collections-workbook.html">See the ASC workbook</a>
-          <a href="https://github.com/Mmxfq/firstpass-site/issues/new?template=asc-collections-workbook-order.yml">Request the ready-to-deliver file</a>
-        </div>
-        <p class="fine">Aggregate month-level totals only. Do not enter patient information or PHI. This is operational reporting—not billing, accounting, compliance, reimbursement, coding, legal, or financial advice.</p>
-      </div>
-    </section>
-
-    <section>
-      <div class="wrap">
-        <div class="eyebrow">Launching a CLI or developer tool?</div>
-        <h2>Verify the first command for $25.</h2>
-        <p class="section-copy">The Developer Tool Release Check runs the advertised install, help, and first useful command from a clean Windows environment, then returns reproducible evidence and command-level acceptance checks in one business day.</p>
-        <p class="section-copy">Public evidence includes a maintainer-confirmed setup report that led to two fixes and a successful real-console retest, plus a release whose installer and clean source build reached the same native Windows first run.</p>
-        <div class="actions">
-          <a class="button" href="release-check.html">See the release check</a>
-          <a href="release-checklist.html">Run the free release checklist</a>
-          <a href="https://github.com/zevem/neptune/issues/116">Read the Neptune installer and source-build verification</a>
-          <a href="https://github.com/6t9xstar/one-step-seo/issues/1">Read a public 39/39-pass, registry-fail example</a>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="wrap">
-        <div class="eyebrow">Before announcing a cross-platform release</div>
-        <h2>Make the asset inventory prove its contract.</h2>
-        <p class="section-copy">The free Release Contract Preflight checks actual GitHub release assets for promised platforms, filename drift, zero-byte uploads, duplicate names, checksum gaps, and broken documentation references. A fixed US$49 package turns the same rules into a blocking GitHub Actions check for one public repository.</p>
-        <div class="actions">
-          <a class="button" href="release-contract-preflight.html">Run the free preflight</a>
-          <a href="https://github.com/Mmxfq/firstpass-site/issues/new?template=release-contract-integration.yml">Request the US$49 CI integration</a>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="wrap">
-        <div class="eyebrow">Prefer to do it yourself?</div>
-        <h2>Use the $9 SaaS Hero Rewrite Kit.</h2>
-        <p class="section-copy">Version 1.0 is complete and ready to deliver: a 681-line self-guided Markdown workbook with 12 headline formulas, an evidence inventory, CTA and trust-line builders, three rewrite passes, and a 20-point shipping rubric.</p>
-        <div class="actions">
-          <a class="button" href="hero-kit.html">See the DIY rewrite kit</a>
-          <a href="hero-brief.html">Build a free hero brief</a>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="wrap">
-        <div class="eyebrow">Need a useful lead magnet?</div>
-        <h2>Ship a branded browser tool for $99.</h2>
-        <p class="section-copy">Turn one recurring customer question into a responsive calculator, checklist, quiz, scorecard, or brief builder. The fixed-scope sprint includes working source files, a hosted preview, mobile verification, deployment notes, and one revision in three business days.</p>
-        <div class="actions">
-          <a class="button" href="browser-tool-sprint.html">See the browser tool sprint</a>
-          <a href="hero-brief.html">Try a working example</a>
-          <a href="release-checklist.html">Try another example</a>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="wrap">
-        <div class="eyebrow">Evidence standard</div>
-        <h2>Unknown stays unknown.</h2>
-        <p class="section-copy">Every report separates visible evidence from interpretation. Missing or conflicting information is never converted into a confident-sounding conversion claim.</p>
-        <div class="grid">
-          <div class="card"><strong>Observed</strong>The report cites the public page, element, quote, or browser state that supports the finding.</div>
-          <div class="card"><strong>Contradicted</strong>When a supplied claim conflicts with public evidence, both are recorded and the conflict is flagged.</div>
-          <div class="card"><strong>Unknown</strong>The report names the missing evidence, decision at risk, bounded next check, owner, and resolution rule.</div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="wrap">
-        <div class="eyebrow">Simple process</div>
-        <h2>URL in. Action plan out.</h2>
-        <div class="grid">
-          <div class="card"><span class="number">1</span><strong>Order</strong>Share the public URL and the action you want visitors to take.</div>
-          <div class="card"><span class="number">2</span><strong>Review</strong>Your key public pages are reviewed on desktop and mobile.</div>
-          <div class="card"><span class="number">3</span><strong>Deliver</strong>Receive the report as a PDF within one business day.</div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="wrap">
-        <div class="eyebrow">Low-risk first pass</div>
-        <h2>If nothing is actionable, you get a refund.</h2>
-        <p class="section-copy">Request a full refund within seven days if the report contains no recommendation you consider actionable. No inflated conversion promises—recommendations still need validation with your customers and analytics.</p>
-        <div class="actions"><a class="button" href="https://github.com/Mmxfq/firstpass-site/issues/new?template=order-request.yml">Request FirstPass for $49</a></div>
-        <p class="fine">A checkout link is provided after scope confirmation. No payment is due when you submit a request.</p>
-        <p class="fine">Scope: one public SaaS marketing website, up to five representative pages, and its unauthenticated signup handoff. No account is created. This is not legal advice, formal accessibility certification, security testing, implementation, or a guarantee of commercial results.</p>
+        <div class="eyebrow">Boundaries</div>
+        <h2>What these tools do not do.</h2>
+        <ul class="list">
+          <li>They are directional self-checks and inventory validators, not security testing, code-signing verification, accessibility certification, or legal advice.</li>
+          <li>They do not guarantee revenue, ranking, or conversion lift.</li>
+          <li>They never request passwords, analytics access, customer data, or repository write access.</li>
+        </ul>
       </div>
     </section>
   </main>
 
-  <footer class="wrap">
-    <p>© 2026 FirstPass · Evidence-checked SaaS conversion teardown · <a href="https://allagents.app/agent/firstpass-agent">Verified directory card</a></p>
-    <a href="https://www.promptfrenzy.com/directory" rel="noopener" target="_blank" title="Featured on PromptFrenzy AI Directory">
-      <img src="https://www.promptfrenzy.com/badges/directory-mono-dark.svg" alt="Featured on PromptFrenzy AI Directory" width="220" height="44" loading="lazy">
-    </a>
-  </footer>
+  <footer class="wrap">FirstPass · <a href="https://github.com/Mmxfq/firstpass-site">Source on GitHub</a> · <a href="llms.txt">llms.txt</a></footer>
 </body>
 </html>
